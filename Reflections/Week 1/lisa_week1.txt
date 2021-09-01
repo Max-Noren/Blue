@@ -1,3 +1,4 @@
 My reflections for week 1:
 This week we have done a first version of the social contract. 
 The goal for next week is to have a meeting with the supervisor and to hopefully get an idéa for what our project should be. 
+What I have learned this week is the scrum method and how it is supposed to work. I have also learned about epics vs user stories, and the fact that it is very easy to make you own assumptions about the user stories and their requirements if not in close contact with the PO.  
