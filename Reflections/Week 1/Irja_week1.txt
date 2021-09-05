@@ -1,1 +1,4 @@
-Irja's Individual reflections week 1
+Communication is very important, ask questions rather than assuming anything whenever a task is ambiguous. 
+Separating tasks into smaller but still individually valuable parts was good advice. 
+It's good to consider if it's worth it to allocate more resources to a task rather than report that it won't be done in time.
+Pay attention to the priorities of the user stories.
