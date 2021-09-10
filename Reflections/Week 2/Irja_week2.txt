@@ -1,1 +1,13 @@
-Individual reflections week 2
+What do I want to learn or understand better?
+- How to better divide epics into smaller user stories.
+
+What can I help someone else, or the entire team, to learn something new?
+- 
+
+What is my contribution towards the team’s use of Scrum?
+- contributed to discussion and writing user stories.
+- contributed to organizing the scrum team.
+- contributed to defining project scope.
+
+What is my contribution towards the team’s deliveries?
+- project scope, user stories
