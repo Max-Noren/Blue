@@ -1,1 +1,7 @@
-placeholder
+Week 2 - Felix Brunengård
+
+This week is the last week before the projectstart. This week we created the project scope and the epics in our Trello board.
+
+As we decided to use PHP my goal is to learn more PHP. I have used basic PHP before in high school, but I am excited to learn more. And we're going to implement a map, so my plan is to be assigned that epic, so I can learn more about implementing api's
+
+I and one more is the only people in the group that have used PHP. So next week we can show the group how to set up a PHP document and the syntax.
