@@ -4,7 +4,7 @@
     </head>
     <body>
     <?php  
-        echo '<p>Hello Gustav<p>';
+        echo '<p>Blue<p>';
     ?>
     <body>
 </HTML>
