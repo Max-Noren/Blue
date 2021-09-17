@@ -1,1 +1,19 @@
+Social Contract
 
+
+No mandatory working during weekends.
+Come prepared to meetings.
+Be on time.
+Everyone has an equal voice and valuable contribution.
+Be helpful if others need help with their tasks.
+Be courteous and respectful.
+Provide constructive criticism.
+Text channel on discord → Update as “daily standup.” 
+Weekly planning and recap (sprint).
+Video is encouraged but not enforced during online meetings. 
+If unable to attend a meeting the team needs to be notified before. 
+Meeting every wednesdays and fridays.
+If you are assigned a job/task, take ownership of it and keep it up to date.
+Communicate before making changes to master.
+
+Whenever a member feels the need to find an agreement in a discussion they can inquire a poll were everyone can submit their current stand and later vote. 
