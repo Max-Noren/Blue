@@ -7,6 +7,7 @@
 if($_GET['btn_submit'])
 {
     input_co2($_GET['car_emission'], $_GET['car_distance']);
+    calculate_co2($_GET['car_emission'], $_GET['car_distance']);
 }
 
 
@@ -18,6 +19,13 @@ if($_GET['btn_submit'])
  {
      echo "This is your emission --> " . $emission . '<br>';
      echo "This is your route distance --> " . $distance . '<br><br>';
+ 
+ }
+
+ function calculate_co2($emission, $distance)
+ {
+    $tot_emission = $emission * $distance;
+    echo "The total emission for your route is --> " . $tot_emission . '<br><br><br>';
  }
 
 
