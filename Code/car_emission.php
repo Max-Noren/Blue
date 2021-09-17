@@ -22,10 +22,14 @@ if($_GET['btn_submit'])
  
  }
 
+#____________________
+# This function calculated the total emission for the route, using
+# inputs for emission & distance, then prints it out. 
+#____________________
  function calculate_co2($emission, $distance)
  {
     $tot_emission = $emission * $distance;
-    echo "The total emission for your route is --> " . $tot_emission . '<br><br><br>';
+    echo "The total emission for your route is: " . $tot_emission . "g CO2" . '<br><br><br>';
  }
 
 
