@@ -1,19 +1,19 @@
 Social Contract
-
-
-No mandatory working during weekends.
-Come prepared to meetings.
-Be on time.
-Everyone has an equal voice and valuable contribution.
-Be helpful if others need help with their tasks.
-Be courteous and respectful.
-Provide constructive criticism.
-Text channel on discord → Update as “daily standup.” 
-Weekly planning and recap (sprint).
-Video is encouraged but not enforced during online meetings. 
-If unable to attend a meeting the team needs to be notified before. 
-Meeting every wednesdays and fridays.
-If you are assigned a job/task, take ownership of it and keep it up to date.
-Communicate before making changes to master.
-
-Whenever a member feels the need to find an agreement in a discussion they can inquire a poll were everyone can submit their current stand and later vote. 
+ 
+- No mandatory working during weekends.
+- Come prepared to meetings.
+- Be on time.
+- Everyone has an equal voice and valuable contribution.
+- Be helpful if others need help with their tasks.
+- Be courteous and respectful.
+- Provide constructive criticism.
+- Weekly planning and recap (sprint).
+- Video is encouraged but not enforced during online meetings. 
+- If unable to attend a meeting the team needs to be notified before. 
+- Meetings Mondays, Wednesdays and Fridays.
+- If you are assigned a job/task, take ownership of it and keep it up to date.
+- Communicate before making changes to master.
+- Whenever a member feels the need to find an agreement in a discussion they can initiate a poll where everyone can submit their current stand and later vote. 
+- Pull requests need everybody to accept before getting merged with master. You have until the next group meeting to review (accept or request changes). The group meeting has the authority to merge pull requests with missing reviews. 
+- Only push something to main if it adheres to our Definition of Done.
+- Update the trello cards with comments when you finish tasks as a form of daily standup.
