@@ -42,6 +42,7 @@ if($_GET['btn_submit'])
             Please input your car's emission in g/km
             <input type="number" id="car_emission" name="car_emission" min="0" max="300">
             <br>
+            <!-- Number input with limit from 0<x<infinity -->
             Please input route distance in km
             <input type="number" id="car_distance" name="car_distance" min="0">
             <br>
