@@ -1,0 +1,13 @@
+Self reflection, week 3.
+
+What do I want to learn or understand better?
+- I want to learn more about PHP and I want to understand the relation between PHP, html and CSS better. I would also like to familiarize myself a bit more with our working enviroment.
+
+How can I help someone else, or the entire team, to learn something new?
+- I could share things I've learned about PHP with the group. Maybe add things to a word list of useful keywords etc for our project.
+
+What is my contribution towards the team’s use of Scrum?
+- I attended our extra meeting focused on user stories and contributed to our initial effort estimations in our group meeting. I found a few different frameworks for unit tests in PHP for the group to explore.
+
+What is my contribution towards the team’s deliveries?
+- I was part of the coding team for a couple of tasks that are now ready for testing.
