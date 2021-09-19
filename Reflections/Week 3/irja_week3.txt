@@ -7,7 +7,7 @@ How can I help someone else, or the entire team, to learn something new?
 - I could share things I've learned about PHP with the group. Maybe add things to a word list of useful keywords etc for our project.
 
 What is my contribution towards the team’s use of Scrum?
-- I attended our extra meeting focused on user stories and contributed to our initial effort estimations in our group meeting. I found a few different frameworks for unit tests in PHP for the group to explore.
+- I attended our extra meeting focused on user stories and contributed to our initial effort estimations in our big group meeting. I found a few different frameworks for unit tests in PHP for the group to explore. I took notes during the TA help sessions and shared them with the group so we won't forget useful feedback on our process.
 
 What is my contribution towards the team’s deliveries?
 - I was part of the coding team for a couple of tasks that are now ready for testing.
