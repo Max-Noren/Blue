@@ -35,6 +35,7 @@
                 "Saltholmen",
                 "Askim"
               ];
+             
             return addresses;
           }
           function myPrint(){
@@ -54,6 +55,39 @@
               source: addressFunc()
             });
           } );
+            
+            
+            
+            function getAddress(){
+                var request = new XMLHttpRequest();
+
+                request.open('GET', 'https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=Gothenburg&boundary.country=SE&sources=openstreetmap,openaddresses');
+
+                request.setRequestHeader('Accept', 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8');
+
+                request.onreadystatechange = function () {
+                  if (this.readyState === 4) {
+                    console.log('Status:', this.status);
+                    console.log('Headers:', this.getAllResponseHeaders());
+                    console.log('Body:', this.responseText);
+                      
+                  }
+                };
+
+                //This crashes the shit
+                request.send();
+                document.write("Trying");
+                
+                var response = JSON.stringify(request);
+                
+                var features = response.features;
+                var name = response.name;
+                document.write(name);
+                
+                
+                document.write("Done!");
+            }
+            getAddress();
           </script>
 
         
@@ -68,31 +102,44 @@
           <label for="end">End Address : </label>
           <input id="end">
         </div>
+    
+
+          <?php
         
-             <!-- Make a search request!-->
-        <script>
+        
+            function getAddresses($search){
 
-          //  $("#search").on("input", function(){
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".$search."&boundary.country=SE&sources=openstreetmap,openaddresses");
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+                curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
-            var request = new XMLHttpRequest();
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                  "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
+                ));
 
-            request.open('GET', 'https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=Gothenburg&focus.point.lon=57.70960871267081&focus.point.lat=57.70960871267081&boundary.rect.min_lon=11.516305134685421&boundary.rect.min_lat=57.57487381798023&boundary.rect.max_lon=12.100816210899202&boundary.rect.max_lat=57.86290599685986&boundary.country=SE&sources=openstreetmap,openaddresses&layers=address,neighbourhood');
+                $response = curl_exec($ch);
+                curl_close($ch);
 
-            request.setRequestHeader('Accept', 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8');
+                $decode = json_decode($response);
+            
 
-            request.onreadystatechange = function () {
-              if (this.readyState === 4) {
-                console.log('Status:', this.status);
-                console.log('Headers:', this.getAllResponseHeaders());
-                console.log('Body:', this.responseText);
-              }
-            };
-
-            request.send();
-
-            //});
-
-        </script>
+                $addresses = [];
+                
+                for($i = 0; $i < count($decode->features); $i++){
+                    $address = $decode->features[$i]->properties->name;
+                    echo $address, "<br>";
+                    array_push($addresses, $address);
+                }
+                echo $addresses[0];
+                return $addresses;
+                
+            }
+            
+        //getAddresses("Majorna");
+            
+                
+        ?>
 
     </body>
 
