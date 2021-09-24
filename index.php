@@ -1,6 +1,15 @@
 <?php
 
 #____________________
+#Global variables
+#____________________
+$electricCarEmission = 9.36; // g CO2e/km (CO2 equivalent)
+$walkEmission = 0;
+$bikeEmission = 0;
+
+
+
+#____________________
 #Upon press of the 'Calculate' button it runs function input_co2()
 #____________________
 
@@ -8,6 +17,7 @@ if($_GET['btn_submit'])
 {
     input_co2($_GET['car_emission'], $_GET['car_distance']);
     calculate_co2($_GET['car_emission'], $_GET['car_distance']);
+    display_co2($_GET['car_emission'], $_GET['car_distance']);
 }
 
 
@@ -23,13 +33,26 @@ if($_GET['btn_submit'])
  }
 
 #____________________
+# This function displays the total emission for the different traveling methods.
+#____________________
+ function display_co2($emission, $distance){
+    global $walkEmission, $bikeEmission, $electricCarEmission;
+    echo "The total emission if traveling by car is: " . calculate_co2($emission, $distance) . "g CO2" . '<br>';
+    echo "The total emission if traveling by electric car is: " . calculate_co2($electricCarEmission, $distance) . "g CO2 equivalent" . '<br>';
+    echo "The total emission for walking is: " . $walkEmission . "g CO2" . '<br>';
+    echo "The total emission for riding a bike is: " . $bikeEmission . "g CO2" . '<br>';
+    echo "<br><br>";
+
+ }
+
+#____________________
 # This function calculated the total emission for the route, using
-# inputs for emission & distance, then prints it out. 
+# inputs for emission & distance.
 #____________________
  function calculate_co2($emission, $distance)
  {
     $tot_emission = $emission * $distance;
-    echo "The total emission for your route is: " . $tot_emission . "g CO2" . '<br><br><br>';
+    return $tot_emission;
  }
 
 

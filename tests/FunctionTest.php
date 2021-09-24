@@ -1,5 +1,6 @@
 <?php
 
+//replace with your own path to index.php
 require 'C:\Users\Joel\Desktop\GIT\Blue\index.php';
 
 class FunctionTest extends \PHPUnit\Framework\TestCase {
