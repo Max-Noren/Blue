@@ -17,3 +17,4 @@ Social Contract
 - Pull requests need everybody to accept before getting merged with master. You have until the next group meeting to review (accept or request changes). The group meeting has the authority to merge pull requests with missing reviews. 
 - Only push something to main if it adheres to our Definition of Done.
 - Update the trello cards with comments when you finish tasks as a form of daily standup.
+- Updates to Definition of Done only affect future tasks and stories.
