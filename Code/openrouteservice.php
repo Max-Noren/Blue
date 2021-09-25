@@ -92,6 +92,40 @@
         <label for="end">End Address: </label>
         <input id="end">
       </div>
+        
+      <input type="submit" name="btn_submit" value="My Carbon Footprint=" />
+        
+      <?php
+        if(isset($_GET['btn_submit']))
+        {
+            echo "submit";
+            
+            $start = $_GET['start'];
+            $end = $_GET['end'];
+            
+        }
+        
+        function getAddresses($search){
+
+            $ch = curl_init();
+            echo "Hello world";
+            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".$search."&boundary.country=SE&sources=openstreetmap,openaddresses");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+              "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
+            ));
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            $coordinates = json_decode($response)->features[0]->geometry->coordinates;
+            
+            return $coordinates;
+        }
+        
+      ?>
 
     </body>
 
