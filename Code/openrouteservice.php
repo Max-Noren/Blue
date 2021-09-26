@@ -82,33 +82,51 @@
       </script>
 
 
-      <!-- Two search fields, start and end address-->
+      <!-- Two search fields, start and end address
       <div class="ui-widget">
         <label for="start">Start Address: </label>
-        <input id="start">
+        <input id="start" name="start" >
         
         <br>  
           
         <label for="end">End Address: </label>
-        <input id="end">
+        <input id="end" name="end">
       </div>
-        
-      <input type="submit" name="btn_submit" value="My Carbon Footprint=" />
+      -->
+      <form>
+      
+        <label for="start">Start Address: </label>
+        <input id="start" name="start" >
+          
+        <br>
+          
+        <label for="end">End Address: </label>
+        <input id="end" name="end" >
+          
+        <br>
+          
+        <input type="submit" name="btn_submit" value="My Carbon Footprint" />
+          
+      </form>    
         
       <?php
-        if(isset($_GET['btn_submit']))
-        {
-            echo "submit";
+        if($_GET['btn_submit'])
+        {   
             
-            $start = $_GET['start'];
-            $end = $_GET['end'];
+            $start = getAddresses($_GET['start']);
+            $end = getAddresses($_GET['end']);
+
+            echo "Start<br>Latitude :  ", $start[0], "<br>Longitude :  ", $start[1];
+            echo "<br>End<br>Latitude :  ", $end[0], "<br>Longitude :  ", $end[1];
+            
+            
             
         }
         
         function getAddresses($search){
 
             $ch = curl_init();
-            echo "Hello world";
+
             curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".$search."&boundary.country=SE&sources=openstreetmap,openaddresses");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -123,7 +141,8 @@
             $coordinates = json_decode($response)->features[0]->geometry->coordinates;
             
             return $coordinates;
-        }
+       }
+      echo getAddresses("Chalmerska Huset, Göteborg, VG, Sverige")[0];
         
       ?>
 
