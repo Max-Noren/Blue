@@ -30,7 +30,7 @@
       <script>
 
         //Global array for available addresses
-        var allAddresses = ["Missing"];
+        var allAddresses = ["N/A"];
 
         //Autocomplete for start address
         $( function() {
@@ -107,26 +107,33 @@
             
           <input type="submit" name="btn_submit" value="My Carbon Footprint" />
             
-      </form> 
+        </form> 
       </div>   
         
       <?php
         // Displayes coordinates from the search
-        if($_GET['btn_submit'])
+        if(isset($_GET['btn_submit']))
         {  
-            $start = getAddresses($_GET['start']);
-            $end = getAddresses($_GET['end']);
-
-            echo "Start<br>Latitude :  ", $start[1], "<br>Longitude :  ", $start[0];
-            echo "<br>End<br>Latitude :  ", $end[1], "<br>Longitude :  ", $end[0];
-            
-            
+	
+			$start = $_GET['start'];
+			$end = $_GET['end'];
+			
+			$start_coordinates = getAddresses($start);
+			$end_coordinates = getAddresses($end);
+			
+			
+			echo "<br>Start<br>";
+			echo "Latitude : ", $start_coordinates[1], "<br>";
+			echo "Longitude : ", $start_coordinates[0], "<br>";
+			
+			echo "<br>End<br>";
+			echo "Latitude : ", $end_coordinates[1], "<br>";
+			echo "Longitude : ", $end_coordinates[0], "<br>";
+			
         }
         
         //Obtains related addresses based on search, Openrouteservice API. Returns coordinates
         function getAddresses($search){
-
-          
 
             $ch = curl_init();
 
@@ -140,6 +147,7 @@
 
             $response = curl_exec($ch);
             curl_close($ch);
+			
             if(empty($features)){
               return ["N/A","N/A"];
             }
@@ -150,7 +158,4 @@
       ?>
 
     </body>
-
-    
-
 </html>
