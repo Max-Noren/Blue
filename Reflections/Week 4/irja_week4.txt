@@ -9,6 +9,7 @@ How can I help someone else, or the entire team, to learn something new?
 What is my contribution towards the team’s use of Scrum?
 - I participated in our meeting where we went over and ranked our user stories in preparation for this week's sprint.
 - I shared my notes from the TA meeting so we wouldn't forget any of the received feedback.
+- I took part in our meeting about velocity estimations and selecting tasks for this week's sprint.
 - I took part in our meeting about updating our social contract and expanding our definition of done. 
 - I identified a disconnect between the tasks and the purpose of a user story in this week's sprint and suggested changes. 
 
