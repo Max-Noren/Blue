@@ -1,5 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html>
+  <!-- 
+      TEST
+      26.09.2021
+       This code have been tested manualy. We have tested and compared our results with google maps an we have gotten the same answer. 
+
+       Problem: The characters ÅÄÖ can not be used to find coordinates...
+  -->
+
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,12 +35,12 @@
         //Autocomplete for start address
         $( function() {
             
-          $("#start").on("input", function(){
+          $("#start").on("input", function(){ //Calls on the getAddress function every keystroke
             getAddress($(this).val());
           })
 
           $( "#start" ).autocomplete({
-            source: allAddresses
+            source: allAddresses //The array from line 81
           });  
             
         } );
@@ -40,12 +48,12 @@
         //Autocomplete for end address
         $( function() {
           
-          $("#end").on("input", function(){
+          $("#end").on("input", function(){ //Calls on the getAddress function every keystroke
             getAddress($(this).val());
           })
           
           $( "#end" ).autocomplete({
-            source: allAddresses
+            source: allAddresses //The array from line 81
           });
             
         } );
@@ -82,52 +90,47 @@
       </script>
 
 
-      <!-- Two search fields, start and end address
+      <!-- Two search fields, start and end address-->
+
       <div class="ui-widget">
-        <label for="start">Start Address: </label>
-        <input id="start" name="start" >
+        <form>
         
-        <br>  
-          
-        <label for="end">End Address: </label>
-        <input id="end" name="end">
-      </div>
-      -->
-      <form>
-      
-        <label for="start">Start Address: </label>
-        <input id="start" name="start" >
-          
-        <br>
-          
-        <label for="end">End Address: </label>
-        <input id="end" name="end" >
-          
-        <br>
-          
-        <input type="submit" name="btn_submit" value="My Carbon Footprint" />
-          
-      </form>    
+          <label for="start">Start Address: </label>
+          <input id="start" name="start" >
+            
+          <br>
+            
+          <label for="end">End Address: </label>
+          <input id="end" name="end" >
+            
+          <br>
+            
+          <input type="submit" name="btn_submit" value="My Carbon Footprint" />
+            
+      </form> 
+      </div>   
         
       <?php
+        // Displayes coordinates from the search
         if($_GET['btn_submit'])
-        {   
-            
+        {  
             $start = getAddresses($_GET['start']);
             $end = getAddresses($_GET['end']);
 
-            echo "Start<br>Latitude :  ", $start[0], "<br>Longitude :  ", $start[1];
-            echo "<br>End<br>Latitude :  ", $end[0], "<br>Longitude :  ", $end[1];
-            
+            echo "Start<br>Latitude :  ", $start[1], "<br>Longitude :  ", $start[0];
+            echo "<br>End<br>Latitude :  ", $end[1], "<br>Longitude :  ", $end[0];
             
             
         }
         
+        //Obtains related addresses based on search, Openrouteservice API. Returns coordinates
         function getAddresses($search){
+
+          
 
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".$search."&boundary.country=SE&sources=openstreetmap,openaddresses");
+            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".urlencode($search)."&boundary.country=SE&sources=openstreetmap,openaddresses");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -137,15 +140,17 @@
 
             $response = curl_exec($ch);
             curl_close($ch);
-
+            if(empty($features)){
+              return ["N/A","N/A"];
+            }
             $coordinates = json_decode($response)->features[0]->geometry->coordinates;
             
             return $coordinates;
        }
-      echo getAddresses("Chalmerska Huset, Göteborg, VG, Sverige")[0];
-        
       ?>
 
     </body>
+
+    
 
 </html>
