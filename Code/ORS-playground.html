@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ORS-Play</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+        <!--<script>
+            $( function() {
+                function log( message ) {
+                    $( "<div>" ).text( message ).prependTo( "#log" );
+                    $( "#log" ).scrollTop( 0 );
+                }
+
+                $( "#birds" ).autocomplete({
+                    source: function( request, response ) {
+                        $.ajax( {
+                            url: "search.php",
+                            dataType: "jsonp",
+                            data: {
+                                term: request.term
+                            },
+                            success: function( data ) {
+                                response( data );
+                            }
+                        } );
+                    },
+                    minLength: 2,
+                    select: function( event, ui ) {
+                        log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+                    }
+                } );
+            } );
+        </script>-->
+
+
+    </head>
+    <body>
+        <input type="text" id="search">
+        <script>
+
+            $("#search").on("input",function (){
+                var request = new XMLHttpRequest();
+
+                request.open('GET', 'https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248e38d3f64310c46ceb044c9b37ef563cd&boundary.country=SE&text='+$(this).val());
+
+                request.setRequestHeader('Accept', 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8');
+
+                request.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        console.log('Status:', this.status);
+                        console.log('Headers:', this.getAllResponseHeaders());
+                        console.log('Body:', this.responseText);
+                    }
+                };
+
+                request.send();
+            })
+
+
+        </script>
+
+    </body>
+</html>
