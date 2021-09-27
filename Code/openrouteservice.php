@@ -7,6 +7,7 @@
 
        Problem: The characters ÅÄÖ can not be used to find coordinates...
   -->
+<html lang="en">
 
     <head>
       <meta charset="utf-8">
@@ -34,26 +35,26 @@
 
         //Autocomplete for start address
         $( function() {
-            
-          $("#start").on("input", function(){ //Calls on the getAddress function every keystroke
+          
+          $("#start").on("input", function(){
             getAddress($(this).val());
           })
 
           $( "#start" ).autocomplete({
-            source: allAddresses //The array from line 81
+            source: allAddresses
           });  
             
         } );
 
         //Autocomplete for end address
         $( function() {
-          
-          $("#end").on("input", function(){ //Calls on the getAddress function every keystroke
+         
+          $("#end").on("input", function(){
             getAddress($(this).val());
           })
           
           $( "#end" ).autocomplete({
-            source: allAddresses //The array from line 81
+            source: allAddresses
           });
             
         } );
@@ -91,7 +92,6 @@
 
 
       <!-- Two search fields, start and end address-->
-
       <div class="ui-widget">
         <form>
         

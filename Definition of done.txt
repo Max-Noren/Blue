@@ -1,0 +1,14 @@
+Definition of Done
+
+- Tested and documentation of how testing was performed (Commented with the code)
+  - Either manual or automated tests
+  - Manual tests should be documented
+
+- Code standard
+  - Commented functions
+  - Camel case
+  - Correct indentation
+  - Descriptive names for variables and functions
+
+- Approved by the group
+- Pushed to Master branch

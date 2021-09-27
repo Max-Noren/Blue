@@ -1,0 +1,12 @@
+Week 3 - Felix Brunengård
+
+This week has mostly been focused on technical stuff, as fixing XAMPP, effort estimation, and creating a hello world.
+
+what do I want to learn or understand better?
+    As for this week, my PHP knowledge is still basic from high school, so my goal is to start coding and getting to know the language better. This I plan to accomplice by taking a user story right over my comfort zone and use google as my friend.
+how can I help someone else, or the entire team, to learn something new?
+    We as a team have decided that we will team up this first week and be coding together. This means that I was a more experienced PHP coder who can help one in the team who has never used PHP before.
+what is my contribution towards the team’s use of Scrum?
+    The contribution towards scrum this week wasn't much as I focused on getting the technical solution up and running for all in the team. So my goal if this week is to get some tasks done and contribute to our meetings.
+what is my contribution towards the team’s deliveries?
+    For this week I will be listening to my PO and Scrum master and do the assignments that I am assigned (as every other week). And hopefully, I will start looking at the implementation of maps.

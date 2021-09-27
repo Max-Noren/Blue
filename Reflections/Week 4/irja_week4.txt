@@ -1,0 +1,20 @@
+Self reflection, week 4.
+
+What do I want to learn or understand better?
+- I want to learn more about our testing environment, and PHP in general. 
+
+How can I help someone else, or the entire team, to learn something new?
+- By discussing and learning things *together*. I think doing tasks together with someone has worked really well for this.
+
+What is my contribution towards the team’s use of Scrum?
+- I participated in our meeting where we went over and ranked our user stories in preparation for this week's sprint.
+- I shared my notes from the TA meeting so we wouldn't forget any of the received feedback.
+- I took part in our meeting about velocity estimations and selecting tasks for this week's sprint.
+- I took part in our meeting about updating our social contract and expanding our definition of done. 
+- I identified a disconnect between the tasks and the purpose of a user story in this week's sprint and suggested changes. 
+
+What is my contribution towards the team’s deliveries?
+- My team worked on selecting the testing environment and setting it up.
+- We wrote a simple test for a function in the code to make sure the environment is working correctly.
+- Then we researched emission averages and displayed them in the app for the user to compare.
+- It was decided we would be the designated testing team for future tests within the project as well.

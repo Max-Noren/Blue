@@ -1,0 +1,24 @@
+Reflection - Week 4
+
+what do I want to learn or understand better?
+To get to know the Scrum Master role and feel comfortable in it is still one of my goals. 
+This week we got started with the project "for real" and I now have a better view of how
+to fulfil my role as Scrum Master within this project. There is still a lot more to
+learn about the role, so I believe I will have this goal as part of my goals for the
+duration of the part of the project when I have it.
+
+I have realised, while working on this project, that I find some of our user stories and
+how they have been divided into task in need of improvement. Therefore, my new goal for the
+comming week is to be better at defining goals and divide them into tasks.
+
+how can I help someone else, or the entire team, to learn something new?
+By sharing my knowledge and experience when needed and give help when someone need it.
+
+what is my contribution towards the team’s use of Scrum?
+Actively participating in meetings and decision making, as every week. I have been 
+given an assignment connected to my role as Scrum Master, to keep track of the Trello board
+and points in the different categories, which I have done. I have also brought up the topic
+of reflection at the end of the sprint and proposed a date when to do it.
+
+what is my contribution towards the team’s deliveries?
+I have participated in the coding of one of our project's main functions.
