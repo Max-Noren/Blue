@@ -122,11 +122,11 @@
 			$end_coordinates = getAddresses($end);
 			
 			
-			echo "<br>Start<br>";
+			echo "<br>Start : ", $start, "<br>";
 			echo "Latitude : ", $start_coordinates[1], "<br>";
 			echo "Longitude : ", $start_coordinates[0], "<br>";
 			
-			echo "<br>End<br>";
+			echo "<br>End : ", $end, "<br>";
 			echo "Latitude : ", $end_coordinates[1], "<br>";
 			echo "Longitude : ", $end_coordinates[0], "<br>";
 			
@@ -137,7 +137,7 @@
 
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".urlencode($search)."&boundary.country=SE&sources=openstreetmap,openaddresses");
+            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".urlencode($search)."&boundary.country=SE&sources=openstreetmap,openaddresses&layers=neighbourhood,address,venue");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -147,6 +147,8 @@
 
             $response = curl_exec($ch);
             curl_close($ch);
+			
+			$features = json_decode($response)->features;
 			
             if(empty($features)){
               return ["N/A","N/A"];
