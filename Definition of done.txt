@@ -12,3 +12,4 @@ Definition of Done
 
 - Approved by the group
 - Pushed to Master branch
+- Integrated in main code
