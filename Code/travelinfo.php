@@ -36,8 +36,8 @@ $data = json_decode($response);
 $dist = $data->routes[0]->summary->distance; //this is the distance
 $duration = $data->routes[0]->summary->duration; //this is the time in seconds
 
-$time = $duration/60;
-$distance = $dist/1000;
+$time = round($duration/60);
+$distance = number_format($dist/1000, 1, '.', ',');
 return array($distance, $time);
 }
 # TODO testvariabler + utskrifter - att ta bort när vi är klara
@@ -45,10 +45,13 @@ $transportationMode_walk = 'foot-walking';
 $transportationMode_car = 'driving-car';
 $transportationMode_wheelchair = 'wheelchair';
 $tranportationMode_cycling ='cycling-regular';
+$tranportationMode_cyclingElectric ='cycling-electric';
+
+
 $coordinatesFrom = '11.966954,57.706818';
 $coordinatesTo = '11.938598,57.705213';
-echo getDistanceAndTime($coordinates_from, $coordinates_to, $transportationMode_wheelchair)[0];
-echo '<br>';
-echo getDistanceAndTime($coordinates_from, $coordinates_to, $transportationMode_wheelchair)[1];
+#echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[0];
+#echo '<br>';
+#echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[1];
 
 ?>

@@ -1,7 +1,8 @@
 <?php
-include ('/Code/emission.php');
-include ('/Code/openrouteservice.php');
-include ('/Code/display.php');
+include ('C:/xampp/htdocs/Blue/Code/emission.php');
+include ('C:/xampp/htdocs/Blue/Code/openrouteservice.php');
+include ('C:/xampp/htdocs/Blue/Code/display.php');
+include ('C:/xampp/htdocs/Blue/Code/travelInfo.php');
 
 
 #____________________
@@ -46,7 +47,13 @@ $ticketPrice = 0;
 $walkCalories = 0;
 $bikeCalories = 0;
 
+#Addresses
+$startAddress = 'Chalmers';
+$endAddress = 'Majorna';
 
+#Chalmers --> Majorna, DEFUALT COORDINATES
+$startCoordinate = '11.963719,57.705524'; 
+$endCoordinate = '11.919815,57.69342';
 
 
 #____________________
@@ -55,9 +62,9 @@ $bikeCalories = 0;
 
 if(isset($_GET['calculate']))
 {
-    process_input();
-    displayCoordinates($startCoordinate, $endCoordinate);
-
+    #displayCoordinates($startCoordinate, $endCoordinate);
+    processInput();
+    processOutput();
     
     #input_co2($_GET['car_emission'], $_GET['car_distance']);
     #calculate_co2($_GET['car_emission'], $_GET['car_distance']);
@@ -67,52 +74,82 @@ if(isset($_GET['calculate']))
 #____________________
 #Processes the inputs and saves them to global variables
 #____________________
-function process_input(){
-        
+function processInput(){
+    
+    #Imports all GLOBAL variables
+    if(true){
+        #Emissions
+        GLOBAL $gasCarEmission, $dieselCarEmission, $electricCarEmission
+        , $walkEmission, $bikeEmission, $publicTranEmission
+
+        #Trip Emissions
+        , $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission
+        , $TripWalkEmission, $TripBikeEmission, $TripPublicTranEmission
+
+        #Distance
+        , $carDistance, $walkDistance, $bikeDistance, $publicTranDistance
+
+        #Time
+        , $carTime, $walkTime, $bikeTime, $publicTranTime
+
+        #Price
+        , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+
+        #Calories
+        , $walkCalories, $bikeCalories
+
+        #Addresses
+        , $startAddress, $endAddress
+        , $startCoordinate , $endCoordinate;
+    }
+    
     #Emissions
     $gasCarEmission = ($_GET['car_emission']);
     $dieselCarEmission = ($_GET['car_emission']);
     $publicTranEmission = 0;
+
+    #Distance
+
+    $carDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[0];
+    $walkDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'foot-walking')[0];
+    $bikeDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[0];
+   
+    $publicTranDistance = ($_GET['distance']);
         
     #Trip Emissions
     $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
     $TripDieselCarEmission = calculateEmission($dieselCarEmission, $carDistance);
     $TripElectricCarEmission =calculateEmission($electricCarEmission, $carDistance);
-    $TripWalkEmission = calculateEmission($walkCarEmission, $walkDistance);
-    $TripBikeEmission = calculateEmission($bikeCarEmission, $bikeDistance);
-    $TripPublicTranEmission = calculateEmission($publicTransportCarEmission, $publicTransportDistance);
+
+    $TripWalkEmission = calculateEmission($walkEmission, $walkDistance);
+    $TripBikeEmission = calculateEmission($bikeEmission, $bikeDistance);
+    $TripPublicTranEmission = calculateEmission($publicTranEmission, $publicTranDistance);
 
     #Coordinates
-    $startAddress = $_GET['start']; 
-    $endAddress = $_GET['end'];
+    #$startAddress = $_GET['start']; 
+    #$endAddress = $_GET['end'];
    
-    $startCoordinate = getAddresses($start);
-    $endCoordinate = getAddresses($end);
-
-    #Distance
-    
-    $carDistance = getDistanceAndTime(startCoordinate, endCoordinate, 'driving-car')[0];
-    $walkDistance = getDistanceAndTime(startCoordinate, endCoordinate, 'foot-walking')[0];
-    $bikeDistance = getDistanceAndTime(startCoordinate, endCoordinate, 'cycling-regular')[0];
-
-    $publicTranDistance = ($_GET['distance']);
+    #$startCoordinate = getAddresses($start);
+    #$endCoordinate = getAddresses($end);
 
     #Time
-    $carTime = getDistanceAndTime(startCoordinate, endCoordinate, 'driving-car')[1];
-    $walkTime = getDistanceAndTime(startCoordinate, endCoordinate, 'foot-walking')[1];
-    $bikeTime = getDistanceAndTime(startCoordinate, endCoordinate, 'cycling-regular')[1];
+    $carTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[1];
+    $walkTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'foot-walking')[1];
+    $bikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[1];
     
-    $publicTranTime = ($_GET['travelTime']);;
+
+
+    $publicTranTime = 0; #($_GET['travelTime']);
 
     #Price
     $gasPrice = 0;
     $dieselPrice = 0;
     $electricPrice = 0;
-    $ticketPrice = ($_GET['ticketPrice']);
+    $ticketPrice = 0; #($_GET['ticketPrice']);
 
     #Calories
-    $walkCalories = ($_GET['calories']);
-    $bikeCalories = ($_GET['calories']);
+    $walkCalories = 0; #($_GET['calories']);
+    $bikeCalories = 0; #($_GET['calories']);
 
 
 
@@ -121,13 +158,51 @@ function process_input(){
 #____________________
 # This function displays the total emission for the different traveling methods.
 #____________________
- function process_output($emission, $distance){
-    global $walkEmission, $bikeEmission, $electricCarEmission;
-    echo "The total emission if traveling by car is: " . calculate_co2($emission, $distance) . "g CO2" . '<br>';
-    echo "The total emission if traveling by electric car is: " . calculate_co2($electricCarEmission, $distance) . "g CO2 equivalent" . '<br>';
-    echo "The total emission for walking is: " . $walkEmission . "g CO2" . '<br>';
-    echo "The total emission for riding a bike is: " . $bikeEmission . "g CO2" . '<br>';
-    echo "<br><br>";
+ function processOutput(){
+
+    #Imports all GLOBAL variables
+    if(true){
+        #Emissions
+        GLOBAL $gasCarEmission, $dieselCarEmission, $electricCarEmission
+        , $walkEmission, $bikeEmission, $publicTranEmission
+
+        #Trip Emissions
+        , $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission
+        , $TripWalkEmission, $TripBikeEmission, $TripPublicTranEmission
+
+        #Distance
+        , $carDistance, $walkDistance, $bikeDistance, $publicTranDistance
+
+        #Time
+        , $carTime, $walkTime, $bikeTime, $publicTranTime
+
+        #Price
+        , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+
+        #Calories
+        , $walkCalories, $bikeCalories
+
+        #Addresses
+        , $startAddress, $endAddress
+        , $startCoordinate , $endCoordinate;
+    }
+    displayEmissionPerKm($gasCarEmission, $dieselCarEmission, $electricCarEmission, 
+                    $bikeEmission,$walkEmission, $publicTranEmission);
+
+                    
+                    
+    displayEmission($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
+                    $TripBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
+
+    
+    displayDistance($carDistance, $bikeDistance,
+                    $walkDistance, $publicTranDistance);
+
+                    
+    displayTime($carTime, $bikeTime,
+                $walkTime, $publicTranTime);
+
+    
 
  }
 
@@ -135,8 +210,13 @@ function process_input(){
 ?>
 
 <html>
+    <head>
+        <title>Blue</title>
+    </head>
+    
     <body>
         <form >
+            <br><br><br>
             <!-- Number input with limit from 0<x<300 -->
             Please input your car's emission in g/km
             <input type="number" id="car_emission" name="car_emission" value="0" min="0" max="300">
