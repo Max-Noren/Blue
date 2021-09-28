@@ -18,6 +18,7 @@ if($_GET['btn_submit'])
     input_co2($_GET['car_emission'], $_GET['car_distance']);
     calculate_co2($_GET['car_emission'], $_GET['car_distance']);
     display_co2($_GET['car_emission'], $_GET['car_distance']);
+    carbonCarEquivalent($_GET['car_emission'], $_GET['car_distance']);
 }
 
 
@@ -46,14 +47,40 @@ if($_GET['btn_submit'])
  }
 
 #____________________
+# This function displays the CO2 equivalence in cheese sandwiches, plastic bags and tumble drying sessions for the car trip.
+#____________________
+ function carbonCarEquivalent($emission, $distance)
+ {
+    $carEmission = calculate_co2($emission, $distance);
+    //how many grams of CO2 is (approx) the emissions from a cheese sandwitch (ostMacka), plasticbag and dryer 
+    $ostMacka = 345;
+    $plasticbag = 33;
+    $dryer = 1074;
+    //calculates the nr of each that represents the car-ride (gas car)
+    $eqvivalentOstMacka = number_format($carEmission / $ostMacka, 1);
+    $eqvivalentPlasticbag = number_format($carEmission / $plasticbag, 1);
+    $eqvivalentDryer = number_format($carEmission / $dryer, 1);
+
+    //output the carbon equivalence
+    echo "<font size='5'>";
+    echo '<br>' . "Carbon equivalence" . '<br>';
+    echo "<font size='3'>";
+    echo "This is a comparisson of your trip with some everyday items and activities." . '<br>';
+    echo "Below are some concrete examples of how much more CO2 you'll release into the air by taking a car instead of walking or biking for your specific route." . '<br>';
+    echo "Number of cheese sandwiches: " . $eqvivalentOstMacka . '<br>';
+    echo "Number of plastic bags: " . $eqvivalentPlasticbag . '<br>';
+    echo "Number of tumble drying sessions: " . $eqvivalentDryer . '<br><br><br>';
+ }
+
+ #____________________
 # This function calculated the total emission for the route, using
 # inputs for emission & distance.
 #____________________
- function calculate_co2($emission, $distance)
- {
-    $tot_emission = $emission * $distance;
-    return $tot_emission;
- }
+function calculate_co2($emission, $distance)
+{
+   $tot_emission = $emission * $distance;
+   return $tot_emission;
+}
 
 
 ?>
