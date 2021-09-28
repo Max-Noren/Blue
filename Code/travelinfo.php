@@ -48,8 +48,8 @@ $tranportationMode_cycling ='cycling-regular';
 $tranportationMode_cyclingElectric ='cycling-electric';
 
 
-$coordinatesFrom = '11.966954,57.706818';
-$coordinatesTo = '11.938598,57.705213';
+#$coordinatesFrom = '11.966954,57.706818';
+#$coordinatesTo = '11.938598,57.705213';
 #echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[0];
 #echo '<br>';
 #echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[1];
