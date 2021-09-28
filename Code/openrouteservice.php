@@ -7,7 +7,6 @@
 
        Problem: The characters ÅÄÖ can not be used to find coordinates...
   -->
-<html lang="en">
 
     <head>
       <meta charset="utf-8">
@@ -35,26 +34,26 @@
 
         //Autocomplete for start address
         $( function() {
-          
-          $("#start").on("input", function(){
+            
+          $("#start").on("input", function(){ //Calls on the getAddress function every keystroke
             getAddress($(this).val());
           })
 
           $( "#start" ).autocomplete({
-            source: allAddresses
+            source: allAddresses //The array from line 81
           });  
             
         } );
 
         //Autocomplete for end address
         $( function() {
-         
-          $("#end").on("input", function(){
+          
+          $("#end").on("input", function(){ //Calls on the getAddress function every keystroke
             getAddress($(this).val());
           })
           
           $( "#end" ).autocomplete({
-            source: allAddresses
+            source: allAddresses //The array from line 81
           });
             
         } );
@@ -92,6 +91,7 @@
 
 
       <!-- Two search fields, start and end address-->
+
       <div class="ui-widget">
         <form>
         
@@ -134,29 +134,39 @@
         
         //Obtains related addresses based on search, Openrouteservice API. Returns coordinates
         function getAddresses($search){
+            $searchUrlEncode = "";
 
-            $ch = curl_init();
-
-            curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".urlencode($search)."&boundary.country=SE&sources=openstreetmap,openaddresses&layers=neighbourhood,address,venue");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-            curl_setopt($ch, CURLOPT_HEADER, FALSE);
-
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-              "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
-            ));
-
-            $response = curl_exec($ch);
-            curl_close($ch);
-			
-			$features = json_decode($response)->features;
-			
-            if(empty($features)){
-              return ["N/A","N/A"];
+          for ($i = 0; $i <= strlen($search); $i++) {
+            if(substr($search,strlen($search)-strlen($search)+$i,1)==" "){
+              $temp = "%20";
             }
-            $coordinates = json_decode($response)->features[0]->geometry->coordinates;
-            
-            return $coordinates;
-       }
+            else{
+              $temp = substr($search,strlen($search)-strlen($search)+$i,1);
+            }
+            $searchUrlEncode = $searchUrlEncode.$temp;
+          };
+          //echo '<script>alert("$searchUrlEncode")</script>';
+          $ch = curl_init();
+
+          curl_setopt($ch, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf624886866da0e6fb41b5a3cb1b1f8f9954d7&text=".$searchUrlEncode."&boundary.country=SE&sources=openstreetmap,openaddresses&layers=neighbourhood,address,venue");
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+          curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+          curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
+          ));
+          $response = curl_exec($ch);
+          curl_close($ch);
+			
+          $features = json_decode($response)->features;
+        
+          if(empty($features)){
+            return ["N/A","N/A"];
+          }
+          $coordinates = json_decode($response)->features[0]->geometry->coordinates;
+          
+          return $coordinates;
+        }
       ?>
 
     </body>
