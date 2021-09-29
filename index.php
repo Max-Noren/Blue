@@ -121,6 +121,7 @@
 
                 
         <?php
+        #Remember to remove path before Code
         include ('C:/xampp/htdocs/Blue/Code/emission.php');
         include ('C:/xampp/htdocs/Blue/Code/display.php');
         include ('C:/xampp/htdocs/Blue/Code/travelInfo.php');
@@ -228,14 +229,11 @@
 
             
             #Coordinates
-            if(isset($_GET['start'])){
-                $startAddress = $_GET['start'];
-            }
-
-            if(isset($_GET['end'])){
-                $startAddress = $_GET['end'];
-            }
-           
+            
+            $startAddress = $_GET['start'];
+            
+            $startAddress = $_GET['end'];
+ 
         
             $startCoordinate = $_GET['startLng'] . ',' . $_GET['startLat'];
             $endCoordinate = $_GET['endLng'] . ',' . $_GET['endLat'];
