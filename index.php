@@ -6,6 +6,9 @@
 $electricCarEmission = 9.36; // g CO2e/km (CO2 equivalent)
 $walkEmission = 0;
 $bikeEmission = 0;
+$dieselCarEmission = 159;
+$gasolineCarEmission = 169;
+$electricBikeEmission = 0.065;
 
 
 
