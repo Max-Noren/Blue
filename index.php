@@ -91,12 +91,12 @@
             <form>
             
                 <label for="start">Start Address: </label>
-                <input id="start" name="start" >
+                <input id="start" name="start" required>
 
                 <br>
 
                 <label for="end">End Address: </label>
-                <input id="end" name="end" >
+                <input id="end" name="end" required>
                     
                 <br>
                 <input style="display: none;" id="startLat" name="startLat" >
