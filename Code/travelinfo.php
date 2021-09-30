@@ -15,8 +15,6 @@
 
     curl_setopt($ch, CURLOPT_POST, TRUE); 
     curl_setopt($ch, CURLOPT_POSTFIELDS, '{"coordinates":[[' . $coordinatesFrom . '],[' . $coordinatesTo . ']]}');
-    #--this is a test with set coordinates---- 
-    #curl_setopt($ch, CURLOPT_POSTFIELDS, '{"coordinates":[[11.966954,57.706818],[11.938598,57.705213]]}');
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
       "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8",
@@ -27,9 +25,6 @@
     $response = curl_exec($ch);
     curl_close($ch);
 
-    # -------this print out ALL response stuff in JSON!!----------
-    #var_dump($response);
-
     $data = json_decode($response);
 
     $dist = $data->routes[0]->summary->distance; //this is the distance
@@ -39,18 +34,5 @@
     $distance = number_format($dist/1000, 1, '.', ',');
     return array($distance, $time);
   }
-  # TODO testvariabler + utskrifter - att ta bort när vi är klara
-  $transportationMode_walk = 'foot-walking';
-  $transportationMode_car = 'driving-car';
-  $transportationMode_wheelchair = 'wheelchair';
-  $tranportationMode_cycling ='cycling-regular';
-  $tranportationMode_cyclingElectric ='cycling-electric';
-
-
-  #$coordinatesFrom = '11.966954,57.706818';
-  #$coordinatesTo = '11.938598,57.705213';
-  #echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[0];
-  #echo '<br>';
-  #echo getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode_wheelchair)[1];
 
 ?>

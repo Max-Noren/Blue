@@ -8,6 +8,8 @@
 #openrouteservice.php -> has been manually tested and 
 #compared to results from Google Maps (Coordinates). 
 #
+#index.php -> Manually tested and compared against results
+#from openrouteservice.org
 -------------------->
 
 
@@ -15,7 +17,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Blue</title>
+        <title>Carbon Mort</title>
         
         <!-- jQuery Widgets -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -146,48 +148,48 @@
     #Global variables
     #____________________
 
-    #Emissions
-    $gasCarEmission = 0;
-    $dieselCarEmission = 0;
-    $electricCarEmission = 9.36; // g CO2e/km (CO2 equivalent)
+    #Emissions (CO2g/km equivalent)
+    $gasCarEmission = 169;
+    $dieselCarEmission = 159;
+    $electricCarEmission = 9.36;
     $walkEmission = 0;
     $bikeEmission = 0;
-    $electricBikeEmission = 0;
+    $electricBikeEmission = 0.065;
     $publicTranEmission = 0;
 
-    #Trip Emissions
+    #Trip Emissions (CO2g equivalent)
     $TripGasCarEmission = 0;
     $TripDieselCarEmission = 0;
-    $TripElectricCarEmission = 9.36; // g CO2e/km (CO2 equivalent)
+    $TripElectricCarEmission = 9.36;
     $TripWalkEmission = 0;
     $TripBikeEmission = 0;
     $TripElectricBikeEmission = 0;
     $TripPublicTranEmission = 0;
 
-    #Distance
+    #Distance (km)
     $carDistance = 0;
     $walkDistance = 0;
     $bikeDistance = 0;
     $publicTranDistance = 0;
 
-    #Time
+    #Time (minutes)
     $carTime = 0;
     $walkTime = 0;
     $bikeTime = 0;
     $electricBikeTime = 0;
     $publicTranTime = 0;
 
-    #Price
+    #Price (yen)
     $gasPrice = 0;
     $dieselPrice = 0;
     $electricPrice = 0;
     $ticketPrice = 0;
 
-    #Calories
+    #Calories (sugar cubes)
     $walkCalories = 0;
     $bikeCalories = 0;
 
-    #Addresses
+    #Addresses 
     $startAddress = '';
     $endAddress = '';
 
@@ -255,7 +257,7 @@
         $electricBikeTime = $bikeDistance;
         
         #Change once västtrafik is implemented
-        $publicTranDistance = $carDistance;
+        $publicTranDistance = 0;
             
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
@@ -264,6 +266,7 @@
         
         $TripWalkEmission = calculateEmission($walkEmission, $walkDistance);
         $TripBikeEmission = calculateEmission($bikeEmission, $bikeDistance);
+        $TripElectricBikeEmission = calculateEmission($electricBikeEmission, $bikeDistance);
         $TripPublicTranEmission = calculateEmission($publicTranEmission, $publicTranDistance);
 
         #Time
@@ -319,6 +322,7 @@
             , $startCoordinate , $endCoordinate;
         }
 
+        #Displays all data
         displayCoordinates($startAddress,$endAddress, $startCoordinate, $endCoordinate);
 
         displayEmissionPerKm($gasCarEmission, $dieselCarEmission, $electricCarEmission, 
@@ -332,6 +336,9 @@
 
         displayEmission($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
                         $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
+
+        displayCarbonEquivalent($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
+                                $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
 
     }
 
