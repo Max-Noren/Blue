@@ -58,6 +58,135 @@ if($_GET['btn_submit'])
     return $tot_emission;
  }
 
+<<<<<<< Updated upstream
+=======
+            #Trip Emissions
+            , $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission
+            , $TripWalkEmission, $TripBikeEmission, $TripElectricBikeEmission, $TripPublicTranEmission
+
+            #Distance
+            , $carDistance, $walkDistance, $bikeDistance, $publicTranDistance
+
+            #Time
+            , $carTime, $walkTime, $bikeTime, $electricBikeTime, $publicTranTime
+
+            #Price
+            , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+
+            #Calories
+            , $walkCalories, $bikeCalories
+
+            #Addresses
+            , $startAddress, $endAddress
+            , $startCoordinate , $endCoordinate;
+        }
+
+        
+        #Address
+        $startAddress = $_GET['start'];
+        $endAddress = $_GET['end'];
+
+        #Coordinates
+        $startCoordinate = $_GET['startLng'] . ',' . $_GET['startLat'];
+        $endCoordinate = $_GET['endLng'] . ',' . $_GET['endLat'];
+
+        #Distance
+        $carDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[0];
+        $walkDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'foot-walking')[0];
+        $bikeDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[0];
+        $electricBikeTime = $bikeDistance;
+
+        #Change once västtrafik is implemented
+        $publicTranDistance = $carDistance;
+            
+        #Trip Emissions
+        $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
+        $TripDieselCarEmission = calculateEmission($dieselCarEmission, $carDistance);
+        $TripElectricCarEmission =calculateEmission($electricCarEmission, $carDistance);
+
+        $TripWalkEmission = calculateEmission($walkEmission, $walkDistance);
+        $TripBikeEmission = calculateEmission($bikeEmission, $bikeDistance);
+        $TripPublicTranEmission = calculateEmission($publicTranEmission, $publicTranDistance);
+
+
+
+        #Time
+        $carTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[1];
+        $walkTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'foot-walking')[1];
+        $bikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[1];
+        $electricBikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycle-electric')[1];
+        
+        #Change once västtrafik is implemented
+        $publicTranTime = $carTime;
+
+        #Price
+        $gasPrice = 0;
+        $dieselPrice = 0;
+        $electricPrice = 0;
+        $ticketPrice = 0; #($_GET['ticketPrice']);
+
+        #Calories
+        $walkCalories = 0; #($_GET['calories']);
+        $bikeCalories = 0; #($_GET['calories']);
+
+
+
+    }
+
+    #____________________
+    # This function displays the total emission for the different traveling methods.
+    #____________________
+    function processOutput(){
+
+        #Imports all GLOBAL variables
+        if(true){
+            #Emissions
+            GLOBAL $gasCarEmission, $dieselCarEmission, $electricCarEmission
+            , $walkEmission, $bikeEmission, $electricBikeEmission, $publicTranEmission
+
+            #Trip Emissions
+            , $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission
+            , $TripWalkEmission, $TripBikeEmission, $TripElectricBikeEmission, $TripPublicTranEmission
+
+            #Distance
+            , $carDistance, $walkDistance, $bikeDistance, $publicTranDistance
+
+            #Time
+            , $carTime, $walkTime, $bikeTime, $electricBikeTime,$publicTranTime
+
+            #Price
+            , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+
+            #Calories
+            , $walkCalories, $bikeCalories
+
+            #Addresses
+            , $startAddress, $endAddress
+            , $startCoordinate , $endCoordinate;
+        }
+
+        displayCoordinates($startAddress,$endAddress, $startCoordinate, $endCoordinate);
+
+        displayEmissionPerKm($gasCarEmission, $dieselCarEmission, $electricCarEmission, 
+                        $bikeEmission, $electricBikeEmission, $walkEmission, $publicTranEmission);
+
+                        
+                        
+        displayEmission($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
+                        $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
+
+        
+        displayDistance($carDistance, $bikeDistance,
+                        $walkDistance, $publicTranDistance);
+
+                        
+        displayTime($carTime, $bikeTime,
+                    $walkTime, $electricBikeTime, $publicTranTime);
+
+        carbonEquivalent($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
+        $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);     
+    }
+>>>>>>> Stashed changes
 
 ?>
 
