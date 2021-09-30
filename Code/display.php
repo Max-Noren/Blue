@@ -1,6 +1,7 @@
 <!------------------- 
 #
-#This file contain all print functions 
+#This file contain all print functions for outputting
+#and displaying data
 #
 #display.php -> Manually tested and compared against results
 #from openrouteservice.php
