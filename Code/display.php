@@ -1,3 +1,13 @@
+<!------------------- 
+#
+#This file contain all print functions 
+#
+#display.php -> Manually tested and compared against results
+#from openrouteservice.php
+#
+-------------------->
+
+
 <?php
 
     function displayEmissionPerKm($gas, $diesel, $electric, $bike, $electricBike, $walk, $publicTran){
