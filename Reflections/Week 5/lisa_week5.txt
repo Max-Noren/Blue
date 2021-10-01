@@ -11,3 +11,17 @@ Next week I hope to be able to contribuate to updating the user interface to mak
 So far I just know how to make larger text sometimes... But I also have an extreamly (!) stressful week next week in the other course I'm taking. So I'll be glas if I can spend just a little time in this course then. Since this course is so much more fun, I'm hoping it wont be a too big issue. 
 Overall I still think the collaboration in the group works well, everyone seems to be engaged and attending meetings, writing code etc. I know for myself I could improve on asking
 the testing team for testing the code I write. Right now I often just do trial-and-error testing myself, seeing if I get the correct output on the website. But this should be easier next week as we have decided to push to a test-branch instead of pushing directly to main. 
+
+In summation with the individual reflection questions:
+what do I want to learn or understand better?
+  - I want to learn more about how to do pretty user interface
+  - I would like to learn to write better tasks to the user stories I'm working on. Sometimes I write them as checklists instead, but I end up editing/deleting them. So I could definetely improve on that.
+how can I help someone else, or the entire team, to learn something new?
+ - By being active in discussions we have in our meetings. 
+ - By coding toghether and findning new relevant information for the task/user storie we are working on.
+what is my contribution towards the team’s use of Scrum?
+ - I make sure to update my/my groups cards in trello. I have also reminded some groups about updating theirs and also assigning people to every card, so that there's no un-assigned cards in progress. 
+  - I have started writing useful information about my cards in trello. Comments that the others can read if they liek when rewieving a pull request.
+  - I contribuate to our meetings. Ask questions etc, we discuss a lot of things. 
+what is my contribution towards the team’s deliveries?
+ - I think that's pretty well described above, both in text but also in the other questions. 
