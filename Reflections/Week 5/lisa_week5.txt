@@ -1,1 +1,13 @@
+This week I manly did a user story with Felicia. We created a method that would print out carbon equivalence for the trip in everyday items(plastic bags etc). 
+What I learned was that we should ask the group about their thoughts before starting to code. It was in the user story a task that we should discuss and decide
+how to display this and also with what we should compare with. So we did that and wrote a method. When we were done we created a pull request, and it wasn't exactly
+how all the other thought it should be done. So we got some great feedback and discussed how we could do it instead and then changed it. So we basically wrote the function
+for this twice, because the second time around we still used the same items we found but we calculated and displayed the results in a whole other way. It ended up being
+more conhesive with the other parts of the website output so it looks nicer now. We also decided, between us two in the end, that we should do a random comparison, aka
+sometimes it compares to plastic bags, sometimes with cheese sandwithces etc. Because there was too much information otherways (less customaer value because it was too much). 
+Overall this made the task come closer to the actual effort points that were set for the user story. So we came close to our estimated effort points this week. 
 
+Next week I hope to be able to contribuate to updating the user interface to make the website prettier. That can be a challange as I have not done much of that in php. 
+So far I just know how to make larger text sometimes... But I also have an extreamly (!) stressful week next week in the other course I'm taking. So I'll be glas if I can spend just a little time in this course then. Since this course is so much more fun, I'm hoping it wont be a too big issue. 
+Overall I still think the collaboration in the group works well, everyone seems to be engaged and attending meetings, writing code etc. I know for myself I could improve on asking
+the testing team for testing the code I write. Right now I often just do trial-and-error testing myself, seeing if I get the correct output on the website. But this should be easier next week as we have decided to push to a test-branch instead of pushing directly to main. 
