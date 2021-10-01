@@ -11,8 +11,6 @@
 #index.php -> Manually tested and compared against results
 #from openrouteservice.org
 -------------------->
-
-
 <html>
     <head>
         <meta charset="utf-8">
