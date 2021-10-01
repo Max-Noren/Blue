@@ -1,14 +1,15 @@
 Definition of Done
 
-- Tested and documentation of how testing was performed (Commented with the code)
-  - Either manual or automated tests
-  - Manual tests should be documented
+- Testing
+  - Manual and automated tests
+  - Tests should be commented in the test suite.
 
 - Code standard
   - Commented functions
   - Camel case
   - Correct indentation
   - Descriptive names for variables and functions
+  - English variable names
 
 - Approved by the group
 - Pushed to Master branch
