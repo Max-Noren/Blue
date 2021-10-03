@@ -1,14 +1,18 @@
 Week 5 reflections
 
-This week we overestimated the effort needed to complete our tasks. We noticed that small tasks take less time than the smallest unit in our effort scale and doing more than one task could easily add up to a whole extra day of estimated effort. 
+This week we overestimated the effort needed to complete our tasks. We noticed that small tasks take less time than the smallest unit in our effort scale and doing 
+more than one task could easily add up to a whole extra day of estimated effort. 
 
-I ended up spending more time on things not relating to the tasks I was initially assigned, so next week I'd like us to be more clear about what you should do if you finish a task early (Do you wait until the next meeting? Do you add new tasks to this week's sprint backlog? Do you check if someone else needs help?). It all worked out this time but the process could probably be made a little smoother in the future.
+I ended up spending more time on things not relating to the tasks I was initially assigned, so next week I'd like us to be more clear about what you should do if 
+you finish a task early (Do you wait until the next meeting? Do you add new tasks to this week's sprint backlog? Do you check if someone else needs help?). 
+It all worked out this time but the process could probably be made a little smoother in the future.
 
 What do I want to learn or understand better?
 - I'd like to know more about how to prioritise when there isn't enough time to do everything.
 
 How can I help someone else, or the entire team, to learn something new?
-- I feel like testing is important but often set aside due to time constraints (generally speaking), so I could try to find more convincing reasons for early and continuous testing.
+- I feel like testing is important but often set aside due to time constraints (generally speaking), so I could try to find more convincing reasons for early 
+and continuous testing.
 
 What is my contribution towards the team’s use of Scrum?
 - I participated in our scrum meetings where we estimated velocity, updated our sprint backlog and appointed tasks to everyone.
@@ -18,5 +22,6 @@ What is my contribution towards the team’s deliveries?
 - I was part of the team that made a new mockup of the app.
 - I reviewed and requested changes to one of our pull requests.
 - I was assigned to research emissions for different kinds of public transport.
-- I advocated written, runnable tests to the group, instead of the manual testing we had fallen into doing. This includes discussion with the group and us consulting a TA about testing.
+- I advocated written, runnable tests to the group, instead of the manual testing we had fallen into doing. This includes discussion with the group and us consulting 
+a TA about testing.
 - I joined a coding session of the team of another task when they asked for help.
