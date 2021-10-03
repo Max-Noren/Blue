@@ -21,7 +21,7 @@ What is my contribution towards the team’s use of Scrum?
 What is my contribution towards the team’s deliveries?
 - I was part of the team that made a new mockup of the app.
 - I reviewed and requested changes to one of our pull requests.
-- I was assigned to research emissions for different kinds of public transport.
+- I was assigned to research emissions for different kinds of public transportation.
 - I advocated written, runnable tests to the group, instead of the manual testing we had fallen into doing. This includes discussion with the group and us 
 consulting a TA about testing.
 - I joined a coding session of the team of another task when they asked for help.
