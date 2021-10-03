@@ -4,7 +4,7 @@ This week we overestimated the effort needed to complete our tasks. We noticed t
 more than one task could easily add up to a whole extra day of estimated effort. 
 
 I ended up spending more time on things not relating to the tasks I was initially assigned, so next week I'd like us to be more clear about what you should do if 
-you finish a task early (Do you wait until the next meeting? Do you add new tasks to this week's sprint backlog? Do you check if someone else needs help?). 
+you finish a task early (do you wait until the next meeting? Do you add new tasks to this week's sprint backlog? Do you check if someone else needs help?). 
 It all worked out this time but the process could probably be made a little smoother in the future.
 
 What do I want to learn or understand better?
