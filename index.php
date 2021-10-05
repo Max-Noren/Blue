@@ -63,7 +63,23 @@
                 background-color: #FFE4E1 ;
                 border-style: inset;
             }
-        
+
+            /* The style of the table */
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
         </style>
     </head>
 
@@ -265,7 +281,7 @@
         processInput();
 
         #Process data and display output
-        processOutput();  
+        processOutput(); 
     }
 
     #____________________
@@ -381,23 +397,11 @@
             , $startCoordinate , $endCoordinate;
         }
 
-        #Displays all data
-        displayCoordinates($startAddress,$endAddress, $startCoordinate, $endCoordinate);
-
-        displayEmissionPerKm($gasCarEmission, $dieselCarEmission, $electricCarEmission, 
-                        $bikeEmission, $electricBikeEmission, $walkEmission, $publicTranEmission);
-        
-        displayDistance($carDistance, $bikeDistance,
-                        $walkDistance, $publicTranDistance);
-                        
-        displayTime($carTime, $bikeTime, $electricBikeTime,
-                    $walkTime, $publicTranTime);
-
-        displayEmission($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
-                        $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
-
-        displayCarbonEquivalent($TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
-                                $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission);
+        #Displays all data in a table
+        displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime, $publicTranTime,
+            $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
+            $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
+            $carDistance, $bikeDistance, $walkDistance, $publicTranDistance);
 
     }
 
