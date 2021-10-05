@@ -1,0 +1,15 @@
+Week 5 - Felix Brunengård
+
+This week was I could accomplish less than before due to the that my other course took up much of my time. However, I was able to find and fix the bug that appeared last week and some other bugs that came with it. There was to problems with the array that we stored data never got reset and the API didn't give coordinates on some requests. I and Irja also redesigned the mock-up because the last one was outdated due to that the PO(and the team) no longer want to show the map.
+
+what do I want to learn or understand better?
+   Next week my goal is to start to implement and understand the västtrafik API. I and some of my teammates will focus on this next week.
+
+how can I help someone else, or the entire team, to learn something new?
+    Like in the previous question, I and some other teammates will look at the API for västtrafik, and at first glance, it's more advanced than the Open route service API.
+
+what is my contribution towards the team’s use of Scrum?
+   I made sure to comment on my Trello cards, do my user stories to the best ability. Also attending all meetings and giving my feedback when necessary. I have also discussed much with some team members about testing. And we, therefore, asked the TA and teacher about what is required in the project.
+
+what is my contribution towards the team’s deliveries?
+    For next week I will be listening to my PO and Scrum master and do the assignments that I am assigned (as every other week). Also, work on the västtrafik user story to bring our website closer to the website we want
