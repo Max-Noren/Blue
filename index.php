@@ -397,7 +397,7 @@
             , $startCoordinate , $endCoordinate;
         }
 
-        #Displays all data in a table
+        #Displays all data in table
         displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime, $publicTranTime,
             $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
             $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
