@@ -110,7 +110,7 @@
         $tooTipCO2e = 'CO2e stands for Carbon Dioxide Equivalence and is a measure of carbon dioxide resulting from in this case your travel. Lower is better.';
         $toolTipTime ='The duration of your trip in hours and minutes.';
         $toolTipDistance = 'The distance in kilometers for your trip, remember that different travel option may have different available routes.';
-        $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many $houseHoldItem.';
+        $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
 
         #ignore
         $easterEgg1 = '*COUGH COUGH*';
@@ -186,7 +186,7 @@
 
                 // Outputs number of household items
                 echo "<tr>";
-                echo "<th title='$toolTipHouseHoldItem' style='text-align:right;'>$houseHoldItem</th>";
+                echo "<th title='$toolTipHouseHoldItem $houseHoldItem' style='text-align:right;'>$houseHoldItem</th>";
                 echo "<td>$gasHouseHoldItems</td>"; // gas
                 echo "<td>$dieselHouseHoldItems</td>"; // diesel
                 echo "<td>$electricHouseHoldItems</td>"; // electric
