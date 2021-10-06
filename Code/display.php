@@ -59,7 +59,7 @@
         $publicTranHouseHoldItems = number_format($publicTran / $RandomMeasure, 1);
 
         //return the type of household item and the equivalent numbers of household items
-        return array($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricBikeHouseHoldItems, 
+        return array($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems);
     }
 
