@@ -146,16 +146,20 @@
     #Global variables
     #____________________
 
-    #Emissions (CO2g/km equivalent)
+    #Emissions (CO2e g/km)
     $gasCarEmission = 169;
     $dieselCarEmission = 159;
     $electricCarEmission = 9.36;
     $walkEmission = 0;
     $bikeEmission = 0;
     $electricBikeEmission = 0.065;
-    $publicTranEmission = 0;
+    $publicTranEmission = 16; // average between bus and tram
+    $tramEmission = 10.33; // per passenger
+    $dieselBusEmission = 22; // per passenger
+    $localTrainEmission = 10.33; // per passenger
+    $ferryEmission = 19.3;
 
-    #Trip Emissions (CO2g equivalent)
+    #Trip Emissions (CO2e g/km)
     $TripGasCarEmission = 0;
     $TripDieselCarEmission = 0;
     $TripElectricCarEmission = 9.36;
