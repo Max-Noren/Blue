@@ -24,10 +24,51 @@
         <!-- jQuery Autocomplete -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <style>
+            /*Text input style : Adjusting size */
+            input[type=text]{
+                border: round;
+                border-radius: 13px;
+                font-size: 150%;
+            }
+
+            /*Submit input style : Adjusting color, size*/
+            input[type=submit]{
+                background-color: #7FFF00;
+                border-radius: 15px;
+                font-weight: bold;
+                font-size: 125%;
+            }
+
+            /* Make inputs visible as interactive*/
+            input:hover{
+                background-color: #FFFF00 ;
+                box-shadow: 2px 2px;
+            }
+
+            /*Img style: Resizing capabilites */
+            img{
+                max-width: 200px;
+                height: auto;
+            }
+
+            /* Hidden explaination visible when hovering*/
+            explain {
+                display : none;
+                font-size: 11px;
+            }
+            .question:hover + explain{
+                display : block;
+                background-color: #FFE4E1 ;
+                border-style: inset;
+            }
+        
+        </style>
     </head>
+
     
     <body>
-    
         <script>
 
         //Global array for available addresses
@@ -96,32 +137,52 @@
 
 
         <!-- Two search fields, start and end address-->
+        <center>
+            <div class="ui-widget">
+                <img src="logo.png">
 
-        <div class="ui-widget">
-            <form>
-            
-                <label for="start">Start Address: </label>
-                <input id="start" name="start" required>
-
+                <h2>Calculate your commute's carbon footprint!</h2>
                 <br>
 
-                <label for="end">End Address: </label>
-                <input id="end" name="end" required>
+                <form>
+                    <!-- Start Address -->
+                    <div style="display:inline-block;">
+                        <label style="font-weight:bold;" for="start">From: </label>
+                        <br>
+                        <input type="text" id="start" name="start" required>
+                        
+                    </div>
+                    
+                    <!-- End Address --> 
+                    <div style="display:inline-block;">
+                        <label style="font-weight:bold;" for="end">To: </label>
+                        <br>
+                        <input type="text" id="end" name="end" required>
+                    </div>
+                    
+                    <br><br><br>
+                    
+                    <!-- Button to calculate carbon footprint -->
+                    <input type="submit" name="calculate" value=" My Commute's Carbon Footprint! " />
+
+                    
+                    <img class="question" style="width: 20px;" id="question" src="question.png">
+                    <explain>Please input the start and end point of your commute, press the button
+                             and let the program calculate the carbon footprint of your commute for 
+                             different travelling option and help you make a more environmentally 
+                             conscious choice! (Limited to Gothenburg Sweden) </explain>
+
+                    <!-- Hidden input fields for saving data -->
+                    <input style="display: none;" id="startLat" name="startLat" >
+                    <input style="display: none;" id="startLng" name="startLng" >
+                    <input style="display: none;" id="endLat" name="endLat" >
+                    <input style="display: none;" id="endLng" name="endLng" >
+                    <br>
+                </form> 
+
                 
-                <br>
-                
-                <!-- Button to calculate -->
-                <input type="submit" name="calculate" value="My Carbon Footprint" />
-                
-                
-                <input style="display: none;" id="startLat" name="startLat" >
-                <input style="display: none;" id="startLng" name="startLng" >
-                <input style="display: none;" id="endLat" name="endLat" >
-                <input style="display: none;" id="endLng" name="endLng" >
-                <br>
-            </form> 
-        </div>   
-    
+            </div>   
+        </center>
     </body>
 </html>
 
