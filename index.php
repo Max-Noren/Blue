@@ -55,6 +55,7 @@
 
             /* Hidden explaination visible when hovering*/
             explain {
+                position: absolute;
                 display : none;
                 font-size: 11px;
             }
@@ -76,10 +77,12 @@
             text-align: left;
             padding: 8px;
             }
-
+            
             tr:nth-child(even) {
             background-color: #dddddd;
             }
+
+
         </style>
     </head>
 
