@@ -75,6 +75,25 @@
         return sprintf($format, $hours, $minutes);
     }
 
+    #Converts grams into kilograms and kilograms into tonnes
+    function convertToTonnesKilos($grams) {
+        $kilos = floor($grams / 1000);
+        $tonnes = floor($grams / 1000000);
+        //$minutes = ($time % 60);
+        if($kilos == 0){
+            $format = '%2d g';
+            return sprintf($format, $grams);
+        }
+        if($tonnes == 0){
+            $format = '%2d kg';
+            return sprintf($format, $kilos);
+        }
+        else{
+            $format = '%2d t';
+            return sprintf($format, $tonnes);  
+        }
+    }
+
     #Displays all the data in a table
     function displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime,
         $publicTranTime, $gas, $diesel, $electric, $bike, $electricBike, $walk, 
@@ -111,13 +130,13 @@
                 // Outputs the CO2 values
                 echo "<tr>";
                 echo "<th style='text-align:right;'>CO2e</th>";
-                echo "<td>$gas g</td>";
-                echo "<td>$diesel g</td>";
-                echo "<td>$electric g</td>";
-                echo "<td>$walk g</td>";
-                echo "<td>$bike g</td>";
-                echo "<td>$electricBike g</td>";
-                echo "<td>$publicTran g</td>";
+                echo "<td>" . convertToTonnesKilos($gas) . "</td>";
+                echo "<td>" . convertToTonnesKilos($diesel) . "</td>";
+                echo "<td>" . convertToTonnesKilos($electric) . "</td>";
+                echo "<td>" . convertToTonnesKilos($walk) . "</td>";
+                echo "<td>" . convertToTonnesKilos($bike) . "</td>";
+                echo "<td>" . convertToTonnesKilos($electricBike) . "</td>";
+                echo "<td>" . convertToTonnesKilos($publicTran) . "</td>";
                 echo "</tr>";
                 
                 // Outputs time
