@@ -63,8 +63,10 @@
         function getAddress(search, startOrEnd){
             var request = new XMLHttpRequest();
 
-            request.open('GET', 'https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248e38d3f64310c46ceb044c9b37ef563cd&text='+search+'&boundary.country=SE&sources=openstreetmap&layers=neighbourhood,address,venue');
-
+            autocompletePart1= 'https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248e38d3f64310c46ceb044c9b37ef563cd&text=';
+            autocompletePart2= '&boundary.country=SE&sources=openstreetmap&layers=neighbourhood,address,venue'
+            autocompletePart3 = '&boundary.circle.lon=11.97307942&boundary.circle.lat=57.70914870&boundary.circle.radius=11';
+            request.open('GET', autocompletePart1 +search+ autocompletePart2 + autocompletePart3);
             request.setRequestHeader('Accept', 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8');
 
             request.onreadystatechange = function () {
