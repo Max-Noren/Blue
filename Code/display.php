@@ -99,6 +99,27 @@
         $publicTranTime, $gas, $diesel, $electric, $bike, $electricBike, $walk, 
         $publicTran, $carDistance, $bikeDistance, $walkDistance, $publicTranDistance){
 
+        #Mouseover tooltips
+        $toolTipGas = 'In general high emission and best avoided. To improve your individual carbon emission try car sharing with other commuters.';
+        $toolTipDiesel = 'Lower carbon emissions than gas car but higher nitrogen oxides which are harmful for humans. In general take the same considerations as with gas driven cars.';
+        $toolTipElectric = 'BEV stands for Battery Electric Vehicle. They have no tailpipe emissions and do not contribute to pollution in our cities. Their emissions come from producing the electricity they consume. Please share your commute!';
+        $toolTipWalk = 'Good for the environment and good for your health! It might just take some time depending on your commute.';
+        $toolTipBike = 'The same benefits as walking but faster!';
+        $toolTipElectricBike = 'More efficent than taking the car but less beneficial as a normal bike in terms of health and enviornment. (Allows you to decide how sweaty you are for the next meeting! ;) )';
+        $toolTipTran = 'Sharing is caring! Your carbon emission may vary depending on your choice of public transportation. The CO2e values in this column represents an avarage between diesel buses and trams. A good alternative if you do not have the option to walk or bike.';
+        $tooTipCO2e = 'CO2e stands for Carbon Dioxide Equivalence and is a measure of carbon dioxide resulting from in this case your travel. Lower is better.';
+        $toolTipTime ='The duration of your trip in hours and minutes.';
+        $toolTipDistance = 'The distance in kilometers for your trip, remember that different travel option may have different available routes.';
+        $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
+
+        #ignore
+        $easterEgg1 = '*COUGH COUGH*';
+        $easterEgg2 = '*cough cough cough*';
+        $easterEgg3 = 'Bzz!';
+        $easterEgg4 = ':)';
+        $easterEgg5 = 'Swooosh!!!';
+        $easterEgg6 = 'Are we there yet?';
+
         list($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems) = 
             calculateHouseHoldItems($gas, $diesel, $electric, $bike, $electricBike, $walk, $publicTran);
@@ -118,42 +139,42 @@
                 // Outputs headers
                 echo "<tr>";
                 echo "<th></th>";
-                echo "<th>Gas</th>";
-                echo "<th>Diesel</th>";
-                echo "<th>BEV</th>";
-                echo "<th>Walking</th>";
-                echo "<th>Cycling</th>";
-                echo "<th>Electric cycling</th>";
-                echo "<th>Public Transport</th>";
+                echo "<th title='$toolTipGas'>Gas</th>";
+                echo "<th title='$toolTipDiesel'>Diesel</th>";
+                echo "<th title='$toolTipElectric'>BEV</th>";
+                echo "<th title='$toolTipWalk'>Walking</th>";
+                echo "<th title='$toolTipBike'>Cycling</th>";
+                echo "<th title='$toolTipElectricBike'>Electric cycling</th>";
+                echo "<th title='$toolTipTran'>Public Transport</th>";
                 echo "<tr>";
 
                 // Outputs the CO2 values
                 echo "<tr>";
-                echo "<th style='text-align:right;'>CO2e</th>";
-                echo "<td>" . convertToTonnesKilos($gas) . "</td>";
-                echo "<td>" . convertToTonnesKilos($diesel) . "</td>";
-                echo "<td>" . convertToTonnesKilos($electric) . "</td>";
-                echo "<td>" . convertToTonnesKilos($walk) . "</td>";
-                echo "<td>" . convertToTonnesKilos($bike) . "</td>";
-                echo "<td>" . convertToTonnesKilos($electricBike) . "</td>";
-                echo "<td>" . convertToTonnesKilos($publicTran) . "</td>";
+                echo "<th title='$tooTipCO2e' style='text-align:right;'>CO2e</th>";
+                echo "<td title='$easterEgg1'>" . convertToTonnesKilos($gas) . "</td>";
+                echo "<td title='$easterEgg2'>" . convertToTonnesKilos($diesel) . "</td>";
+                echo "<td title='$easterEgg3'>" . convertToTonnesKilos($electric) . "</td>";
+                echo "<td title='$easterEgg4'>" . convertToTonnesKilos($walk) . "</td>";
+                echo "<td title='$easterEgg4'>" . convertToTonnesKilos($bike) . "</td>";
+                echo "<td title='$easterEgg4'>" . convertToTonnesKilos($electricBike) . "</td>";
+                echo "<td title='$easterEgg4'>" . convertToTonnesKilos($publicTran) . "</td>";
                 echo "</tr>";
-                
+
                 // Outputs time
                 echo "<tr>";
-                echo "<th style='text-align:right;'>Time</th>";
+                echo "<th title='$toolTipTime' style='text-align:right;'>Time</th>";
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // gas
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // diesel
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // electric
                 echo "<td>" . convertToHoursMins($walkTime) . "</td>";
-                echo "<td>" . convertToHoursMins($bikeTime) . "</td>";
-                echo "<td>" . convertToHoursMins($electricBikeTime) . "</td>";
-                echo "<td>" . convertToHoursMins($publicTranTime) . "</td>";
+                echo "<td title='$easterEgg5'>" . convertToHoursMins($bikeTime) . "</td>";
+                echo "<td title='$easterEgg5'>" . convertToHoursMins($electricBikeTime) . "</td>";
+                echo "<td title='$easterEgg6'>" . convertToHoursMins($publicTranTime) . "</td>";
                 echo "</tr>";
 
                 // Outputs distance
                 echo "<tr>";
-                echo "<th style='text-align:right;'>Distance</th>";
+                echo "<th title='$toolTipDistance' style='text-align:right;'>Distance</th>";
                 echo "<td>$carDistance km</td>"; // gas
                 echo "<td>$carDistance km</td>"; // diesel
                 echo "<td>$carDistance km</td>"; // electric
@@ -165,7 +186,7 @@
 
                 // Outputs number of household items
                 echo "<tr>";
-                echo "<th style='text-align:right;'>$houseHoldItem</th>";
+                echo "<th title='$toolTipHouseHoldItem $houseHoldItem' style='text-align:right;'>$houseHoldItem</th>";
                 echo "<td>$gasHouseHoldItems</td>"; // gas
                 echo "<td>$dieselHouseHoldItems</td>"; // diesel
                 echo "<td>$electricHouseHoldItems</td>"; // electric
