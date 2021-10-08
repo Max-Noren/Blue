@@ -97,7 +97,8 @@
     #Displays all the data in a table
     function displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime,
         $publicTranTime, $gas, $diesel, $electric, $bike, $electricBike, $walk, 
-        $publicTran, $carDistance, $bikeDistance, $walkDistance, $publicTranDistance){
+        $publicTran, $carDistance, $bikeDistance, $walkDistance, $publicTranDistance,
+        $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice){
 
         #Mouseover tooltips
         $toolTipGas = 'In general high emission and best avoided. To improve your individual carbon emission try car sharing with other commuters.';
@@ -195,7 +196,21 @@
                 echo "<td>$electricBikeHouseHoldItems</td>"; // electric bike
                 echo "<td>$publicTranHouseHoldItems</td>";
                 echo "</tr>";
-        
+
+                
+                // Outputs costs
+                echo "<tr>";
+                echo "<th title='$toolTipCost' style='text-align:right;'>Cost</th>";
+                echo "<td>$totalGasPrice kr</td>"; // gas
+                echo "<td>$totalDieselprice kr</td>"; // diesel
+                echo "<td>$totalElectricPice kr</td>"; // electric
+                echo "<td>This is free!</td>";
+                echo "<td>This is also free!</td>"; // bike
+                echo "<td>This is (almost) free!</td>"; // electric bike
+                echo "<td>$totalTicketprice kr</td>";
+                echo "</tr>";
+                
+
             echo "</table>";
     }
 
