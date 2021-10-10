@@ -14,3 +14,4 @@ what is my contribution towards the team’s use of Scrum?
  - I have started writing useful information about my cards in trello. Comments that the others can read if they liek when reviewing a pull request.
 what is my contribution towards the team’s deliveries?
  - I think that's pretty well described above, both in text but also in the other questions. 
+ - I also try to be active with reviewing the other team members pull requests, since we have decided that everyone should review and accept a pull request before merging into main this allows the groups flow to be better. I have also pointed out the importance of this during a meeting this week, since all of our pull requests tends to be left until the end of the week since all group members don´t do this. But I also understand that it takes time and some might not have the time to look at a pull request immidietely. 
