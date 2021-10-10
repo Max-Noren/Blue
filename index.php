@@ -269,13 +269,13 @@
     #Price (kr)
     $gasPrice = 17.59; 
     $dieselPrice = 19.17;
-    $electricPrice = 0;
+    $electricPrice = 1.650;
     $ticketPrice = 0;
 
-     #fuel consumption (liter/km)
-     $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
-     $dieselConsumption = 0.051;
-     $electricConsumption = 0;
+    #fuel consumption (liter/km)
+    $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
+    $dieselConsumption = 0.051;
+    $electricConsumption = 0.2; // kwh/km
 
     #Calories (sugar cubes)
     $walkCalories = 0;
