@@ -112,6 +112,7 @@
         $toolTipTime ='The duration of your trip in hours and minutes.';
         $toolTipDistance = 'The distance in kilometers for your trip, remember that different travel option may have different available routes.';
         $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
+        $toolTipCost = 'The price for your trip in Swedish Kronor (SEK). The cost is only for the fuel consumed during your trip (calculated for a car made in 2020) or a Västtrafik ticket price within Gothenburg.';
 
         #ignore
         $easterEgg1 = '*COUGH COUGH*';
@@ -202,12 +203,12 @@
                 echo "<tr>";
                 echo "<th title='$toolTipCost' style='text-align:right;'>Cost</th>";
                 echo "<td>$totalGasPrice kr</td>"; // gas
-                echo "<td>$totalDieselprice kr</td>"; // diesel
-                echo "<td>$totalElectricPice kr</td>"; // electric
+                echo "<td>$totalDieselPrice kr</td>"; // diesel
+                echo "<td>$totalElectricPrice kr</td>"; // electric
                 echo "<td>This is free!</td>";
                 echo "<td>This is also free!</td>"; // bike
                 echo "<td>This is (almost) free!</td>"; // electric bike
-                echo "<td>$totalTicketprice kr</td>";
+                echo "<td>$totalTicketPrice kr</td>";
                 echo "</tr>";
                 
 

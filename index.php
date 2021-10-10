@@ -273,9 +273,9 @@
     $ticketPrice = 0;
 
      #fuel consumption (liter/km)
-     $gasConsumption = 0.056;
+     $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
      $dieselConsumption = 0.051;
-     $electricConsumption = 0; // =$TripElectricCarEmission ??
+     $electricConsumption = 0;
 
     #Calories (sugar cubes)
     $walkCalories = 0;
