@@ -1,33 +1,16 @@
 
-
-
-
-previous week:
-
-This week I manly did a user story with Felicia. We created a method that would print out carbon equivalence for the trip in everyday items(plastic bags etc). 
-What I learned was that we should ask the group about their thoughts before starting to code. It was in the user story a task that we should discuss and decide
-how to display this and also with what we should compare with. So we did that and wrote a method. When we were done we created a pull request, and it wasn't exactly
-how all the other thought it should be done. So we got some great feedback and discussed how we could do it instead and then changed it. So we basically wrote the function
-for this twice, because the second time around we still used the same items we found but we calculated and displayed the results in a whole other way. It ended up being
-more conhesive with the other parts of the website output so it looks nicer now. We also decided, between us two in the end, that we should do a random comparison, aka
-sometimes it compares to plastic bags, sometimes with cheese sandwithces etc. Because there was too much information otherways (less customaer value because it was too much). 
-Overall this made the task come closer to the actual effort points that were set for the user story. So we came close to our estimated effort points this week. 
-
-Next week I hope to be able to contribuate to updating the user interface to make the website prettier. That can be a challange as I have not done much of that in php. 
-So far I just know how to make larger text sometimes... But I also have an extreamly (!) stressful week next week in the other course I'm taking. So I'll be glas if I can spend just a little time in this course then. Since this course is so much more fun, I'm hoping it wont be a too big issue. 
-Overall I still think the collaboration in the group works well, everyone seems to be engaged and attending meetings, writing code etc. I know for myself I could improve on asking
-the testing team for testing the code I write. Right now I often just do trial-and-error testing myself, seeing if I get the correct output on the website. But this should be easier next week as we have decided to push to a test-branch instead of pushing directly to main. 
+This week I did two smaller user stories, mostly because I did not have a lot of effort or time to put in this week since my other course was a lot this week, but I knew this beforehand and planned accordingly. I think my user stories ended up matching the effort points I comitted to, although they were estimated to more effort from the beginning. My first user story exactly matched my remaining effort points but it was quicker and simpler than expected so on wednesday I commited to another user story as well. With that one I ran into some problems, I have requested help with that. I also did some logo suggestions for our website. Next week we plan to finalize the app monday-wednesday, and later start with our report for the course.
 
 In summation with the individual reflection questions:
 what do I want to learn or understand better?
-  - I want to learn more about how to do pretty user interface
-  - I would like to learn to write better tasks to the user stories I'm working on. Sometimes I write them as checklists instead, but I end up editing/deleting them. So I could definetely improve on that.
+  - I want to learn more about how to do pretty user interface (same as last week)
+  - I would like to learn to help the group do better effort estimations for the user stories. They are still not quite on track.
 how can I help someone else, or the entire team, to learn something new?
- - By being active in discussions we have in our meetings. 
- - By coding toghether and findning new relevant information for the task/user storie we are working on.
+ - By being active in discussions we have in our meetings. We do already have a very open discussion climat, I feel like everyone has a chance to get their voice heard. But I guess I could also try to notice if someone isn't speeking so much, and ask them for their input as well.  
+ - I could share my experiences and input when we for example estimate user stories, to make them closer to reality.
 what is my contribution towards the team’s use of Scrum?
- - I make sure to update my/my groups cards in trello. I have also reminded some groups about updating theirs and also assigning people to every card, so that there's no un-assigned cards in progress. 
-  - I have started writing useful information about my cards in trello. Comments that the others can read if they liek when rewieving a pull request.
-  - I contribuate to our meetings. Ask questions etc, we discuss a lot of things. 
+ - I make sure to update my user story cards in trello and also to make relevant tasks in forms of checklists or task-cards.
+ - I am active in our scrum-sprint planning meetings.
+ - I have started writing useful information about my cards in trello. Comments that the others can read if they liek when reviewing a pull request.
 what is my contribution towards the team’s deliveries?
  - I think that's pretty well described above, both in text but also in the other questions. 
