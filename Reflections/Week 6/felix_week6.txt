@@ -1,0 +1,15 @@
+Week 6 - Felix Brunengård
+
+This week has been more difficult than the other weeks because I and two others tried to implement the Västtraffik API. The API is much less documented than Open Route service and therefore putting more pressure on us to know and understand how to implement the API in our code.
+
+what do I want to learn or understand better?
+   As this will be the last sprint that starts next week there is not much time left in the project. Right now we have a problem with the Västtrafik API. So to solve this we need to learn more about "curl" in PHP, so this is also my goal. So the beginning of the week will be deep-diving into information about curl.
+
+how can I help someone else, or the entire team, to learn something new?
+    When I have deep-dived into curl I can use this to inform my team members about what we did wrong and what we can do to avoid these problems in the future.
+
+what is my contribution towards the team’s use of Scrum?
+   I made sure to comment on my Trello cards, do my user stories to the best ability. Also attending all meetings and giving my feedback when necessary. I have also discussed much with some team members about testing. And we, therefore, asked the TA and teacher about what is required in the project.
+
+what is my contribution towards the team’s deliveries?
+    For next week I will be listening to my PO and Scrum master and do the assignments that I am assigned (as every other week). And as I stated before I will try to complete the västtrafik API.
