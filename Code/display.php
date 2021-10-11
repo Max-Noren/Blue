@@ -97,7 +97,8 @@
     #Displays all the data in a table
     function displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime,
         $publicTranTime, $gas, $diesel, $electric, $bike, $electricBike, $walk, 
-        $publicTran, $carDistance, $bikeDistance, $walkDistance, $publicTranDistance){
+        $publicTran, $carDistance, $bikeDistance, $walkDistance, $publicTranDistance,
+        $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice){
 
         #Mouseover tooltips
         $toolTipGas = 'In general high emission and best avoided. To improve your individual carbon emission try car sharing with other commuters.';
@@ -111,6 +112,7 @@
         $toolTipTime ='The duration of your trip in hours and minutes.';
         $toolTipDistance = 'The distance in kilometers for your trip, remember that different travel option may have different available routes.';
         $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
+        $toolTipCost = 'The price for your trip in Swedish Kronor (SEK). The cost is only for the fuel consumed during your trip (calculated for a car made in 2020) or a Västtrafik ticket price within Gothenburg.';
 
         #ignore
         $easterEgg1 = '*COUGH COUGH*';
@@ -195,7 +197,21 @@
                 echo "<td>$electricBikeHouseHoldItems</td>"; // electric bike
                 echo "<td>$publicTranHouseHoldItems</td>";
                 echo "</tr>";
-        
+
+                
+                // Outputs costs
+                echo "<tr>";
+                echo "<th title='$toolTipCost' style='text-align:right;'>Cost</th>";
+                echo "<td>$totalGasPrice kr</td>"; // gas
+                echo "<td>$totalDieselPrice kr</td>"; // diesel
+                echo "<td>$totalElectricPrice kr</td>"; // electric
+                echo "<td>0 kr</td>"; // walk
+                echo "<td>0 kr</td>"; // bike
+                echo "<td>0 kr</td>"; // electric bike
+                echo "<td>$totalTicketPrice kr</td>";
+                echo "</tr>";
+                
+
             echo "</table>";
     }
 

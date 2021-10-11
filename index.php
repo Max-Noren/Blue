@@ -213,16 +213,19 @@
     include ('../Blue/Code/emission.php');
     include ('../Blue/Code/display.php');
     include ('../Blue/Code/travelinfo.php');
+    include ('../Blue/Code/costs.php');
 
     #Import Windows
     #include ('C:/xampp/htdocs/Blue/Code/emission.php');
     #include ('C:/xampp/htdocs/Blue/Code/display.php');
     #include ('C:/xampp/htdocs/Blue/Code/travelinfo.php');
+    #include ('C:/xampp/htdocs/Blue/Code/costs.php');
 
     #Import Mac
     #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/emission.php');
     #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/display.php');
     #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/travelinfo.php');
+    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/costs.php');
 
     #____________________
     #Global variables
@@ -263,11 +266,16 @@
     $electricBikeTime = 0;
     $publicTranTime = 0;
 
-    #Price (yen)
-    $gasPrice = 0;
-    $dieselPrice = 0;
-    $electricPrice = 0;
+    #Price (kr)
+    $gasPrice = 17.59; 
+    $dieselPrice = 19.17;
+    $electricPrice = 1.650;
     $ticketPrice = 0;
+
+    #fuel consumption (liter/km)
+    $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
+    $dieselConsumption = 0.051;
+    $electricConsumption = 0.2; // kwh/km
 
     #Calories (sugar cubes)
     $walkCalories = 0;
@@ -315,10 +323,14 @@
             , $carTime, $walkTime, $bikeTime, $electricBikeTime, $publicTranTime
 
             #Price
-            , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+            , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice,
+            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice //?
 
             #Calories
             , $walkCalories, $bikeCalories
+
+            #fuel consumption (liter/km)
+            , $gasConsumption ,$dieselConsumption , $electricConsumption
 
             #Addresses
             , $startAddress, $endAddress
@@ -363,10 +375,11 @@
         $publicTranTime = 0;
 
         #Price
-        $gasPrice = 0;
-        $dieselPrice = 0;
-        $electricPrice = 0;
-        $ticketPrice = 0; #($_GET['ticketPrice']);
+        $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
+        $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
+        #OBS: price/consumtion for electric not implemented yet!
+        $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
+        $totalTicketPrice = 0; #($_GET['ticketPrice']);
 
         #Calories
         $walkCalories = 0; #($_GET['calories']);
@@ -396,7 +409,7 @@
             , $carTime, $walkTime, $bikeTime, $electricBikeTime,$publicTranTime
 
             #Price
-            , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice
+            , $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -410,7 +423,8 @@
         displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime, $publicTranTime,
             $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
             $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
-            $carDistance, $bikeDistance, $walkDistance, $publicTranDistance);
+            $carDistance, $bikeDistance, $walkDistance, $publicTranDistance, 
+            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice);
 
     }
 
