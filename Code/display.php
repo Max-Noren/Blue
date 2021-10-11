@@ -205,9 +205,9 @@
                 echo "<td>$totalGasPrice kr</td>"; // gas
                 echo "<td>$totalDieselPrice kr</td>"; // diesel
                 echo "<td>$totalElectricPrice kr</td>"; // electric
-                echo "<td>This is free!</td>";
-                echo "<td>This is also free!</td>"; // bike
-                echo "<td>This is (almost) free!</td>"; // electric bike
+                echo "<td>0 kr</td>"; // walk
+                echo "<td>0 kr</td>"; // bike
+                echo "<td>0 kr</td>"; // electric bike
                 echo "<td>$totalTicketPrice kr</td>";
                 echo "</tr>";
                 
