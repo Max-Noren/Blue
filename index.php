@@ -24,66 +24,9 @@
         <!-- jQuery Autocomplete -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
 
-        <style>
-            /*Text input style : Adjusting size */
-            input[type=text]{
-                border: round;
-                border-radius: 13px;
-                font-size: 150%;
-            }
-
-            /*Submit input style : Adjusting color, size*/
-            input[type=submit]{
-                background-color: #7FFF00;
-                border-radius: 15px;
-                font-weight: bold;
-                font-size: 125%;
-            }
-
-            /* Make inputs visible as interactive*/
-            input:hover{
-                background-color: #FFFF00 ;
-                box-shadow: 2px 2px;
-            }
-
-            /*Img style: Resizing capabilites */
-            img{
-                max-width: 200px;
-                height: auto;
-            }
-
-            /* Hidden explaination visible when hovering*/
-            explain {
-                position: absolute;
-                display : none;
-                font-size: 11px;
-            }
-            .question:hover + explain{
-                display : block;
-                background-color: #FFE4E1 ;
-                border-style: inset;
-            }
-
-            /* The style of the table */
-            table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            }
-
-            td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-            background-color: #dddddd;
-            }
-
-
-        </style>
     </head>
 
     
