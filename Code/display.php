@@ -130,6 +130,8 @@
         $costinfoElectricBike = 'This is (almost) free. If you use an electric bike everyday for your commute it will add up to a small cost for the electricity used.';
         $costinfoPublicTransport = 'This is the cost of a Zon A Västtrafik ticket in 2021, valid 90 minutes within Gothenburg for an adult. For commuters, this can be made cheaper by buying a Period ticket instead. A 30 day Zon A ticket would cost ~18,9 SEK/trip, a 90 day Zon A ticket would cost ~17 SEK/trip and a 365 day Zon A ticket would only cost ~15,6 SEK/trip! (calculated with the assumption of making a returntrip later the same day and using an average of 21 workdays/month or 255 workdays/year)';
 
+        #tooltip for public transportation distance
+        $toolTipPublictransportDist = 'Note that this is not completely accurate. This is calculated using the shortest route for a car only and will probably not be a completely accurate representation of the distance for the route using public transportation.';
 
         list($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems) = 
@@ -156,7 +158,7 @@
                 echo "<th title='$toolTipWalk'>Walking</th>";
                 echo "<th title='$toolTipBike'>Cycling</th>";
                 echo "<th title='$toolTipElectricBike'>Electric cycling</th>";
-                echo "<th title='$toolTipTran'>Public Transport</th>";
+                echo "<th title='$toolTipTran'>Public Transport</th>"; 
                 echo "<tr>";
 
                 // Outputs the CO2 values
@@ -168,7 +170,7 @@
                 echo "<td title='$co2infoZeroemission'>" . convertToTonnesKilos($walk) . "</td>";
                 echo "<td title='$co2infoZeroemission'>" . convertToTonnesKilos($bike) . "</td>";
                 echo "<td title='$co2infoElectricBike'>" . convertToTonnesKilos($electricBike) . "</td>";
-                echo "<td title='$co2infoPublicTransport'>" . convertToTonnesKilos($publicTran) . "</td>";
+                echo "<td title='$co2infoPublicTransport'>" . convertToTonnesKilos($publicTran) . "</td>"; 
                 echo "</tr>";
 
                 // Outputs time
@@ -177,10 +179,10 @@
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // gas
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // diesel
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // electric
-                echo "<td>" . convertToHoursMins($walkTime) . "</td>";
-                echo "<td>" . convertToHoursMins($bikeTime) . "</td>";
-                echo "<td>" . convertToHoursMins($electricBikeTime) . "</td>";
-                echo "<td>" . convertToHoursMins($publicTranTime) . "</td>";
+                echo "<td>" . convertToHoursMins($walkTime) . "</td>"; //walk
+                echo "<td>" . convertToHoursMins($bikeTime) . "</td>"; //bike
+                echo "<td>" . convertToHoursMins($electricBikeTime) . "</td>"; //electric bike
+                echo "<td>" . convertToHoursMins($publicTranTime) . "</td>"; //public transport
                 echo "</tr>";
 
                 // Outputs distance
@@ -189,10 +191,10 @@
                 echo "<td>$carDistance km</td>"; // gas
                 echo "<td>$carDistance km</td>"; // diesel
                 echo "<td>$carDistance km</td>"; // electric
-                echo "<td>$walkDistance km</td>";
+                echo "<td>$walkDistance km</td>"; //walk
                 echo "<td>$bikeDistance km</td>"; // bike
                 echo "<td>$bikeDistance km</td>"; // electric bike
-                echo "<td>$publicTranDistance km</td>";
+                echo "<td title='$toolTipPublictransportDist'>" . $publicTranDistance . " km" . "</td>"; //public transport
                 echo "</tr>";
 
                 // Outputs number of household items
@@ -204,7 +206,7 @@
                 echo "<td>$walkHouseHoldItems</td>";
                 echo "<td>$bikeHouseHoldItems</td>"; // bike
                 echo "<td>$electricBikeHouseHoldItems</td>"; // electric bike
-                echo "<td>$publicTranHouseHoldItems</td>";
+                echo "<td>$publicTranHouseHoldItems</td>"; //public transport
                 echo "</tr>";
 
                 

@@ -353,7 +353,7 @@
         $electricBikeTime = $bikeDistance;
         
         #Change once västtrafik is implemented
-        $publicTranDistance = 0;
+        $publicTranDistance = $carDistance; //using car distance right now (since västtrafiks API doesn't provide this)
             
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
@@ -377,7 +377,6 @@
         #Price
         $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
-        #OBS: price/consumtion for electric not implemented yet!
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
         $totalTicketPrice = $ticketPrice; #($_GET['ticketPrice']);
 
