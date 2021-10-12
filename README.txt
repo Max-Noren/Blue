@@ -16,7 +16,7 @@ The code of the program is split between a main function, ‘index.php’, and s
 * display.php -> Contain functions that display output data
 
 ### Extra
-* 'style.css' contain CSS for startup interface style elements.
+* 'style.css' contain a majority of CSS code for style elements such as startup interface and table.
 
 * The ‘test’ folder is for future potential tests if deemed necessary.
 
