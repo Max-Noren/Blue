@@ -214,6 +214,7 @@
     include ('../Blue/Code/display.php');
     include ('../Blue/Code/travelinfo.php');
     include ('../Blue/Code/costs.php');
+    include ('../Blue/Code/publicTransport.php');
 
     #Import Windows
     #include ('C:/xampp/htdocs/Blue/Code/emission.php');
@@ -343,8 +344,12 @@
         $endAddress = $_GET['end'];
 
         #Coordinates
-        $startCoordinate = $_GET['startLng'] . ',' . $_GET['startLat'];
-        $endCoordinate = $_GET['endLng'] . ',' . $_GET['endLat'];
+        $startLat = $_GET['startLat'];
+        $startLng = $_GET['startLng'];
+        $endLat = $_GET['endLat'];
+        $endLng = $_GET['endLng'];
+        $startCoordinate = $startLng . ',' . $startLat;
+        $endCoordinate = $endLng . ',' . $endLat;
         
         #Distance
         $carDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[0];
@@ -372,18 +377,18 @@
         $electricBikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-electric')[1];
 
         #Change once västtrafik is implemented
-        $publicTranTime = 0;
+        $publicTranTime = getPublicTransport($startLat, $startLng, $endLat, $endLng);
 
         #Price
         $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
         #OBS: price/consumtion for electric not implemented yet!
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
-        $totalTicketPrice = 0; #($_GET['ticketPrice']);
+        $totalTicketPrice = 0;
 
         #Calories
-        $walkCalories = 0; #($_GET['calories']);
-        $bikeCalories = 0; #($_GET['calories']);
+        $walkCalories = 0; 
+        $bikeCalories = 0;
 
     }
 

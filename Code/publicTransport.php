@@ -1,22 +1,7 @@
-<html>
-<head>
-</head>
-
-<body>
 <?php
 
 
-//function getPublicTransport($coordinatesFrom, $coordinatesTo){
-    //Start : Nordstan, Göteborg, VG, Sverige-->(11.96761,57.708077)
-    //End : Polisen Göteborg, Göteborg, VG, Sverige-->(12.287668,57.664153)
-    //$coordinatesFrom = "11.96761,57.708077";
-    //$coordinatesTo = "12.287668,57.664153";
-
-    //Split coordinates
-    //$coordiatesFromLong=explode(',', coordinatesFrom)[0];
-    //$coordiatesToLong=explode(',', coordinatesTo)[0];
-    //$coordiatesFromLat=explode(',', coordinatesFrom)[1];
-    //$coordiatesToLat=explode(',', coordinatesTo)[1];
+function getPublicTransport($originLat, $originLng, $destinationLat, $destinationLng){
 
     //Get token from Västtrafik API
     $curl = curl_init();
@@ -36,11 +21,11 @@
     $authKey=json_decode($responseAuth)-> access_token;
 
    
-    //Get data from API
+    //Get data from Västtrafik API
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://api.vasttrafik.se/bin/rest.exe/v2/trip?originCoordLat=57.705524&originCoordLong=11.963719&originCoordName=Chalmers%2C%20Gothenburg%2C%20VG%2C%20Sweden&destCoordLat=57.708077&destCoordLong=11.96761&destCoordName=Nordstan%2C%20Gothenburg%2C%20VG%2C%20Sweden&format=json',
+    CURLOPT_URL => 'https://api.vasttrafik.se/bin/rest.exe/v2/trip?originCoordLat='.$originLat.'&originCoordLong='.$originLng.'&originCoordName=fran&destCoordLat='.$destinationLat.'&destCoordLong='.$destinationLng.'&destCoordName=till&format=json',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -56,10 +41,21 @@
     $response = curl_exec($curl);
 
     curl_close($curl);
-    echo json_decode($response)-> TripList -> Trip[0]->Leg[0]->type;    
-    //$data = json_decode($response);
-//}
+
+    //Finds the highest index in array/index for end destination
+    $maxIndex = 0;   
+    while(json_decode($response)-> TripList -> Trip[0]->Leg[$maxIndex+1]->type != null){
+        $maxIndex++;
+    };
+
+    //Time calculation
+    $a = new DateTime(json_decode($response)-> TripList -> Trip[0]->Leg[0]->Origin->time);
+    $b = new DateTime(json_decode($response)-> TripList -> Trip[0]->Leg[$maxIndex]->Destination->time);
+    $interval = $b->diff($a);
+
+    //Return time diffrence in minutes
+    return $interval->format("%H")*60 + $interval->format("%i");
+
+}
 
 ?>
-</body>
-</html>
