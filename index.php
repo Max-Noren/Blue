@@ -270,7 +270,7 @@
     $gasPrice = 17.59; 
     $dieselPrice = 19.17;
     $electricPrice = 1.650;
-    $ticketPrice = 0;
+    $ticketPrice = 34;
 
     #fuel consumption (liter/km)
     $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
@@ -379,7 +379,7 @@
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
         #OBS: price/consumtion for electric not implemented yet!
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
-        $totalTicketPrice = 0; #($_GET['ticketPrice']);
+        $totalTicketPrice = $ticketPrice; #($_GET['ticketPrice']);
 
         #Calories
         $walkCalories = 0; #($_GET['calories']);

@@ -128,7 +128,7 @@
         $costinfoElectricCar = 'This cost is based on how much electricity an average BEV consumes measured in kwh/km (0,2 kwh/km in 2021) and the current price of electricity within Gothenburg 2021 which is 1,65 SEK/kwh';
         $costinfoFree = 'This is free!';
         $costinfoElectricBike = 'This is (almost) free. If you use an electric bike everyday for your commute it will add up to a small cost for the electricity used.';
-        $costinfoPublicTransport = 'This is the cost of a Västtrafik ticket, valid 90 minutes within Gothenburg.';
+        $costinfoPublicTransport = 'This is the cost of a Zon A Västtrafik ticket in 2021, valid 90 minutes within Gothenburg for an adult. For commuters, this can be made cheaper by buying a Period ticket instead. A 30 day Zon A ticket would cost ~18,9 SEK/trip, a 90 day Zon A ticket would cost ~17 SEK/trip and a 365 day Zon A ticket would only cost ~15,6 SEK/trip! (calculated with the assumption of making a returntrip later the same day and using an average of 21 workdays/month or 255 workdays/year)';
 
 
         list($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
