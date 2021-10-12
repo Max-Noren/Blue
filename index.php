@@ -324,7 +324,7 @@
 
             #Price
             , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice,
-            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice //?
+            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice 
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -408,7 +408,11 @@
             , $carTime, $walkTime, $bikeTime, $electricBikeTime,$publicTranTime
 
             #Price
+            , $gasPrice, $dieselPrice, $electricPrice
             , $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice
+
+            #fuel consumption (liter/km)
+            , $gasConsumption, $dieselConsumption, $electricConsumption
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -423,7 +427,10 @@
             $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
             $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
             $carDistance, $bikeDistance, $walkDistance, $publicTranDistance, 
-            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice);
+            $gasPrice, $dieselPrice, $electricPrice,
+            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice,
+            $gasCarEmission, $dieselCarEmission, $electricCarEmission, $publicTranEmission,
+            $gasConsumption, $dieselConsumption, $electricConsumption);
 
     }
 
