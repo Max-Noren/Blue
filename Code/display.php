@@ -63,7 +63,7 @@
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems);
     }
 
-    #Converts minutes into hours and minutes format
+    #Converts minutes into hours and minutes
     function convertToHoursMins($time) {
         $hours = floor($time / 60);
         $minutes = ($time % 60);
@@ -115,17 +115,20 @@
         $toolTipCost = 'The price for your trip in Swedish Kronor (SEK). The cost is only for the fuel consumed or a Västtrafik ticket within Gothenburg.';
 
         #Tooltips for CO2 calculations
-        $co2infoCars = 'This is calculated using an average value for the Co2 emissions in grams/km and multiplied with the lenght of your trip in km';
+        $co2infoCarGas = 'This is calculated using an average emission value for gas cars, 169g Co2/km, multiplied with the lenght of your trip in km';
+        $co2infoCarDiesel = 'This is calculated using an average emission value for diesel cars, 159g Co2/km, multiplied with the lenght of your trip in km';
+        $co2infoCarElectric = 'This is calculated using an average emission value for BEVs, 9.36 g Co2/km, multiplied with the lenght of your trip in km';
         $co2infoZeroemission = 'Close enough to zero to be ignored';
         $co2infoElectricBike = 'Electric bikes consumes small ammounts of electricity and therefor the Co2 emissions per km is very low. While biking within Gothenburg the emissions are close to zero. :)';
         $co2infoPublicTransport = 'This is calculated using an average value of Co2 emissions for different kinds of public transportation methods within Gothenburg (busses, tram etc.). The end result is based on that value, the lenght of the trip and for one passenger.';
 
         #Tooltips for cost
-        $costinfoCars = 'The cost is only for the fuel consumed during your trip (calculated for a car made in 2020)';
-        $costinfoElectricCar = 'The cost for the trip with a BEV is based on how much electricity an average BEV consumes measured in kwh/km and the current price of electricity within Gothenburg 2021';
+        $costinfoCarGas = 'The cost is only for the fuel consumed during your trip. Fuel consumption is at average 5,6 l/100 km (calculated for a gas car made in 2020), and the current gas price in september 2021 is 17,59 SEK.';
+        $costinfoCarDiesel = 'The cost is only for the fuel consumed during your trip. Fuel consumption is at average 5,1 l/100 km (calculated for a diesel car made in 2020), and the current gas price in september 2021 is 19,17 SEK.';
+        $costinfoElectricCar = 'This cost is based on how much electricity an average BEV consumes measured in kwh/km (0,2 kwh/km in 2021) and the current price of electricity within Gothenburg 2021 which is 1,65 SEK/kwh';
         $costinfoFree = 'This is free!';
-        $costinfoElectricBike = 'This is almost free, if you use the bike everyday it will add up to a small cost though so it is not totally free.';
-        $costinfoPublicTransport = 'This is the cost of a Västtrafik ticket, valid 90 minutes within Gothenburg.'
+        $costinfoElectricBike = 'This is (almost) free. If you use an electric bike everyday for your commute it will add up to a small cost for the electricity used.';
+        $costinfoPublicTransport = 'This is the cost of a Västtrafik ticket, valid 90 minutes within Gothenburg.';
 
 
         list($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
@@ -159,9 +162,9 @@
                 // Outputs the CO2 values
                 echo "<tr>";
                 echo "<th title='$tooTipCO2e' style='text-align:right;'>CO2e</th>";
-                echo "<td title='$co2infoCars'>" . convertToTonnesKilos($gas) . "</td>";
-                echo "<td title='$co2infoCars'>" . convertToTonnesKilos($diesel) . "</td>";
-                echo "<td title='$co2infoCars'>" . convertToTonnesKilos($electric) . "</td>";
+                echo "<td title='$co2infoCarGas'>" . convertToTonnesKilos($gas) . "</td>";
+                echo "<td title='$co2infoCarDiesel'>" . convertToTonnesKilos($diesel) . "</td>";
+                echo "<td title='$co2infoCarElectric'>" . convertToTonnesKilos($electric) . "</td>";
                 echo "<td title='$co2infoZeroemission'>" . convertToTonnesKilos($walk) . "</td>";
                 echo "<td title='$co2infoZeroemission'>" . convertToTonnesKilos($bike) . "</td>";
                 echo "<td title='$co2infoElectricBike'>" . convertToTonnesKilos($electricBike) . "</td>";
@@ -175,9 +178,9 @@
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // diesel
                 echo "<td>" . convertToHoursMins($carTime) . "</td>"; // electric
                 echo "<td>" . convertToHoursMins($walkTime) . "</td>";
-                echo "<td title='$easterEgg5'>" . convertToHoursMins($bikeTime) . "</td>";
-                echo "<td title='$easterEgg5'>" . convertToHoursMins($electricBikeTime) . "</td>";
-                echo "<td title='$easterEgg6'>" . convertToHoursMins($publicTranTime) . "</td>";
+                echo "<td>" . convertToHoursMins($bikeTime) . "</td>";
+                echo "<td>" . convertToHoursMins($electricBikeTime) . "</td>";
+                echo "<td>" . convertToHoursMins($publicTranTime) . "</td>";
                 echo "</tr>";
 
                 // Outputs distance
@@ -208,15 +211,13 @@
                 // Outputs costs
                 echo "<tr>";
                 echo "<th title='$toolTipCost' style='text-align:right;'>Cost</th>";
-                echo "<td title='$costinfoCars'>" . $totalGasPrice . " kr" . "</td>"; //gas
-                echo "<td title='$costinfoCars'>" . $totalDieselPrice . " kr" . "</td>"; //diesel
-
-
-                echo "<td>$totalElectricPrice kr</td>"; // electric
-                echo "<td>0 kr</td>"; // walk
-                echo "<td>0 kr</td>"; // bike
-                echo "<td>0 kr</td>"; // electric bike
-                echo "<td>$totalTicketPrice kr</td>";
+                echo "<td title='$costinfoCarGas'>" . $totalGasPrice . " kr" . "</td>"; //gas
+                echo "<td title='$costinfoCarDiesel'>" . $totalDieselPrice . " kr" . "</td>"; //diesel
+                echo "<td title='$costinfoElectricCar'>" . $totalElectricPrice . " kr" . "</td>"; // electric
+                echo "<td title='$costinfoFree'>" . "0 kr" . "</td>"; // walk
+                echo "<td title='$costinfoFree'>" . "0 kr" . "</td>"; // bike
+                echo "<td title='$costinfoElectricBike'>" . "0 kr" . "</td>"; // electric bike
+                echo "<td title='$costinfoPublicTransport'>" . $totalTicketPrice . " kr" . "</td>"; // public transport cost
                 echo "</tr>";
 
             echo "</table>";
