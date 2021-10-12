@@ -1,0 +1,20 @@
+Reflection - Week 6
+
+what do I want to learn or understand better?
+I feel that we as a group has become better at defining clear and resonable assignments
+for the week. The thing I want to become better at next week is to estimate the number of 
+points a task will take, which I believe I, and we as a group, have struggled with.
+
+how can I help someone else, or the entire team, to learn something new?
+By sharing my knowledge and experience when needed and give help when someone need it.
+
+what is my contribution towards the team’s use of Scrum?
+Actively participating in meetings and decision making, as every week. I have kept track 
+of the user story assignments for each week and how many points we take on vs how many we
+finish. This week I put the numbers into tables which I shared with the rest of the group.
+
+what is my contribution towards the team’s deliveries?
+I, together with Felix and Felicia, have worked with trying to get public transport information
+from Västtrafik by using their API, which turned out to be more difficult than expected since it
+is not well documented. Unfortunately we were not able to finish it during this week's sprint, but
+we made good progress so hopefully we will be able to finish it next week.
