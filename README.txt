@@ -26,6 +26,15 @@ https://trello.com/b/zNDrUmN4
 
 ## Developer documents (see DevDocuments folder)
 
+Who's who in Github:
+Felicia Berggren - dex2503
+Felix Brunnegård - felixbrunnegard
+Lisa Löving - lisaloving
+Max Norén - Max-Noren
+Joel Persson - jopers
+Johanna Schüldt - Yoschu
+Irja Vuorela - Snarkjakten
+
 Definition of done:
 https://github.com/Max-Noren/Blue/blob/main/DevDocuments/Definition%20of%20done.pdf
 
