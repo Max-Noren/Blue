@@ -153,10 +153,11 @@
 <?php
     
     #Import functions (Main)
-    include ('../Blue/Code/emission.php');
-    include ('../Blue/Code/display.php');
-    include ('../Blue/Code/travelinfo.php');
-    include ('../Blue/Code/costs.php');
+    include ('Code/emission.php');
+    include ('Code/display.php');
+    include ('Code/travelinfo.php');
+    include ('Code/costs.php');
+    include ('Code/publicTransport.php');
 
     #Import Windows
     #include ('C:/xampp/htdocs/Blue/Code/emission.php');
