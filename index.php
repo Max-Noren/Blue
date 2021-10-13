@@ -213,7 +213,7 @@
     $gasPrice = 17.59; 
     $dieselPrice = 19.17;
     $electricPrice = 1.650;
-    $ticketPrice = 0;
+    $ticketPrice = 34;
 
     #fuel consumption (liter/km)
     $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
@@ -267,7 +267,7 @@
 
             #Price
             , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice,
-            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice //?
+            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice 
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -296,7 +296,7 @@
         $electricBikeTime = $bikeDistance;
         
         #Change once västtrafik is implemented
-        $publicTranDistance = 0;
+        $publicTranDistance = $carDistance; //using car distance right now (since västtrafiks API doesn't provide this)
             
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
@@ -320,9 +320,8 @@
         #Price
         $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
-        #OBS: price/consumtion for electric not implemented yet!
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
-        $totalTicketPrice = 0; #($_GET['ticketPrice']);
+        $totalTicketPrice = $ticketPrice; #($_GET['ticketPrice']);
 
         #Calories
         $walkCalories = 0; #($_GET['calories']);
@@ -352,7 +351,11 @@
             , $carTime, $walkTime, $bikeTime, $electricBikeTime,$publicTranTime
 
             #Price
+            , $gasPrice, $dieselPrice, $electricPrice
             , $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice
+
+            #fuel consumption (liter/km)
+            , $gasConsumption, $dieselConsumption, $electricConsumption
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -367,7 +370,10 @@
             $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
             $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
             $carDistance, $bikeDistance, $walkDistance, $publicTranDistance, 
-            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice);
+            $gasPrice, $dieselPrice, $electricPrice,
+            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice,
+            $gasCarEmission, $dieselCarEmission, $electricCarEmission, $publicTranEmission,
+            $gasConsumption, $dieselConsumption, $electricConsumption);
 
     }
 
