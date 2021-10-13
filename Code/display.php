@@ -118,6 +118,12 @@
         $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
         $toolTipCost = 'The price for your trip in Swedish Kronor (SEK). The cost is only for the fuel consumed or a Västtrafik ticket within Gothenburg.';
 
+        #icon tooltips
+        $toolTipCarIcon = 'Half of all trips made by car in Swedish cities (like Gothenburg) are shorter than 5 km, according to Trafikverket. This is unfortunate since there are so many more energyefficient and environmental friendly options, such as public transportation, biking or walking. To take the bike or to walk is also good for your health!';
+        $toolTipWalkIcon = 'I was walking home late one night when I saw dozens of giant cupcakes and pies everywhere. It was kind of scary… The streets were oddly desserted.';
+        $toolTipBikeIcon = 'Riding a bike is a fast way to get to your destination and has close to zero negative impact on the environment! It is also very good for your health. Just don´t forget your helmet!';
+        $toolTipPublicTransportIcon = 'Public transport in Gothenburg consists of buses, trams, and ferries. There are various types of tickets depending on how often you travel, how old you are or if you´re a student. With the same ticket, you can take the bus, the tram or the ferry.';
+
         #Tooltips for CO2 calculations
         $co2InfoCars1 = 'This is calculated using an average emission value for'; //part 1 of general car co2 emissions statement
         $co2InfoCars2 = 'g Co2/km, multiplied with the lenght of your trip in km'; //part 2 of general car co2 emissions statement
@@ -138,6 +144,15 @@
         #tooltip for public transportation distance
         $toolTipPublicTransportDist = 'Disclaimer: This is calculated using the shortest route for a car only and will probably not be a completely accurate representation of the distance for the route using public transportation.';
 
+        #eastereggs
+        $easterEgg1 = 'Bzz!'; //BEV
+        $easterEgg2 = 'wrooom'; //cars
+        $easterEgg3 = 'Swooosh!!!'; //electric bike
+        $easterEgg4 = 'Are we there yet?'; //walk
+        $easterEgg5 = 'The bus leaves in a minute...'; //public transport
+        $easterEgg6 = 'phew!'; //bike
+
+
         list($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems) = 
             calculateHouseHoldItems($gas, $diesel, $electric, $bike, $electricBike, $walk, $publicTran);
@@ -148,10 +163,10 @@
                 // Outputs icons
                 echo "<tr>";
                 echo "<th></th>";
-                echo "<th colspan='3' style='text-align:center;'>" . '<i class="fas fa-car fa-3x"></i>' . "</th>";
-                echo "<th style='text-align:center;'>" . '<i class="fas fa-walking fa-3x"></i>' . "</th>";
-                echo "<th colspan='2' style='text-align:center;'>" . '<i class="fas fa-bicycle fa-3x"></i>' . "</th>";
-                echo "<th style='text-align:center;'>" . '<i class="fas fa-bus fa-3x"></i>' . "</th>";
+                echo "<th title='$toolTipCarIcon' colspan='3' style='text-align:center;'>" . '<i class="fas fa-car fa-3x"></i>' . "</th>";
+                echo "<th title='$toolTipWalkIcon' style='text-align:center;'>" . '<i class="fas fa-walking fa-3x"></i>' . "</th>";
+                echo "<th title='$toolTipBikeIcon' colspan='2' style='text-align:center;'>" . '<i class="fas fa-bicycle fa-3x"></i>' . "</th>";
+                echo "<th title='$toolTipPublicTransportIcon' style='text-align:center;'>" . '<i class="fas fa-bus fa-3x"></i>' . "</th>";
                 echo "<tr>";
 
                 // Outputs headers
@@ -178,16 +193,17 @@
                 echo "<td title='$co2InfoPublicTransport1 $publicTranEmission $co2InfoPublicTransport2'>" . convertToTonnesKilos($publicTran) . "</td>"; //public transport
                 echo "</tr>";
 
+                
                 // Outputs time
                 echo "<tr>";
                 echo "<th title='$toolTipTime' style='text-align:right;'>Time</th>";
-                echo "<td>" . convertToHoursMins($carTime) . "</td>"; // gas
-                echo "<td>" . convertToHoursMins($carTime) . "</td>"; // diesel
-                echo "<td>" . convertToHoursMins($carTime) . "</td>"; // electric
-                echo "<td>" . convertToHoursMins($walkTime) . "</td>"; //walk
-                echo "<td>" . convertToHoursMins($bikeTime) . "</td>"; //bike
-                echo "<td>" . convertToHoursMins($electricBikeTime) . "</td>"; //electric bike
-                echo "<td>" . convertToHoursMins($publicTranTime) . "</td>"; //public transport
+                echo "<td title='$easterEgg2'>" . convertToHoursMins($carTime) . "</td>"; // gas
+                echo "<td title='$easterEgg2'>" . convertToHoursMins($carTime) . "</td>"; // diesel
+                echo "<td title='$easterEgg1'>" . convertToHoursMins($carTime) . "</td>"; //BEV (electric car)
+                echo "<td title='$easterEgg4'>" . convertToHoursMins($walkTime) . "</td>"; //walk
+                echo "<td title='$easterEgg6'>" . convertToHoursMins($bikeTime) . "</td>"; //bike
+                echo "<td title='$easterEgg3'>" . convertToHoursMins($electricBikeTime) . "</td>"; //electric bike
+                echo "<td title='$easterEgg5'>" . convertToHoursMins($publicTranTime) . "</td>"; //public transport
                 echo "</tr>";
 
                 // Outputs distance
@@ -195,7 +211,7 @@
                 echo "<th title='$toolTipDistance' style='text-align:right;'>Distance</th>";
                 echo "<td>$carDistance km</td>"; // gas
                 echo "<td>$carDistance km</td>"; // diesel
-                echo "<td>$carDistance km</td>"; // electric
+                echo "<td>$carDistance km</td>"; // BEV (electric car)
                 echo "<td>$walkDistance km</td>"; //walk
                 echo "<td>$bikeDistance km</td>"; // bike
                 echo "<td>$bikeDistance km</td>"; // electric bike
