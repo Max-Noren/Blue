@@ -5,20 +5,42 @@ With the help of this web application a commuter in Gothenburg can calculate the
 
 Link to website:
 https://blue.felixbrunnegard.se
+(Can also be run locally with XAMPP)
 
 
 ## Program - Structure
 The code of the program is split between a main function, ‘index.php’, and several helper functions separate php files in the ‘Code’ folder.  ‘Index.php’ is the main code and contains the startup interface and integrates all parts of the program. The remaining helper functions are sorted different php files with their filename corresponding to different categories, these include:
 * costs.php -> Contain cost related function
 * emission.php -> Contain emission related function
-* travelinfo.php -> Contain function that provides travel info such as time and distance
+* travelinfo.php -> Contain function that provides travel info such as time and distance using OpenRouteService, not including Public Transport.
 * display.php -> Contain functions that display output data
+* PublicTransport.php -> Contain function that provides time estimate for public transport using Västtrafik API
 
-The ‘test’ folder is for future potential tests if deemed necessary.
+### Extra
+* 'style.css' contain a majority of CSS code for style elements such as startup interface and table.
+
+* The ‘test’ folder is for future potential tests if deemed necessary.
 
 ## External resources:
 Scrum Board on Trello:
 https://trello.com/b/zNDrUmN4
+
+Github Program and important documents:
+https://github.com/Max-Noren/Blue
+
+Who's who in Github:
+* Felicia Berggren - dex2503
+* Felix Brunnegård - felixbrunnegard
+* Lisa Löving - lisaloving
+* Max Norén - Max-Noren
+* Joel Persson - jopers
+* Johanna Schüldt - Yoschu
+* Irja Vuorela - Snarkjakten
+
+Google Drive for personal notes and collaboration:
+https://drive.google.com/drive/folders/1k7Uuw1GjZzPXnhWh3KDRiSEmxrUMD90Z?usp=sharing
+
+*(Notice that the shared Drive does not contain vital parts of the project and is merely used as a tool for cooperation, notes and brainstorming. A few meeting protocols are kept in the folder "Mötesprotokoll". For final versions of important documents such as Social  contract, Team Reflections and Definition of Done, please refer to Github repository above)
 
 ## Developer documents (see DevDocuments folder)
 

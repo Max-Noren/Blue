@@ -15,7 +15,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Carbon Mort</title>
+        <title>Blue</title>
         
         <!-- jQuery Widgets -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -24,66 +24,9 @@
         <!-- jQuery Autocomplete -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
 
-        <style>
-            /*Text input style : Adjusting size */
-            input[type=text]{
-                border: round;
-                border-radius: 13px;
-                font-size: 150%;
-            }
-
-            /*Submit input style : Adjusting color, size*/
-            input[type=submit]{
-                background-color: #7FFF00;
-                border-radius: 15px;
-                font-weight: bold;
-                font-size: 125%;
-            }
-
-            /* Make inputs visible as interactive*/
-            input:hover{
-                background-color: #FFFF00 ;
-                box-shadow: 2px 2px;
-            }
-
-            /*Img style: Resizing capabilites */
-            img{
-                max-width: 200px;
-                height: auto;
-            }
-
-            /* Hidden explaination visible when hovering*/
-            explain {
-                position: absolute;
-                display : none;
-                font-size: 11px;
-            }
-            .question:hover + explain{
-                display : block;
-                background-color: #FFE4E1 ;
-                border-style: inset;
-            }
-
-            /* The style of the table */
-            table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            }
-
-            td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-            background-color: #dddddd;
-            }
-
-
-        </style>
     </head>
 
     
@@ -210,22 +153,18 @@
 <?php
     
     #Import functions (Main)
-    include ('../Blue/Code/emission.php');
-    include ('../Blue/Code/display.php');
-    include ('../Blue/Code/travelinfo.php');
-    include ('../Blue/Code/costs.php');
+    include ('Code/emission.php');
+    include ('Code/display.php');
+    include ('Code/travelinfo.php');
+    include ('Code/costs.php');
+    include ('Code/publicTransport.php');
 
     #Import Windows
     #include ('C:/xampp/htdocs/Blue/Code/emission.php');
     #include ('C:/xampp/htdocs/Blue/Code/display.php');
     #include ('C:/xampp/htdocs/Blue/Code/travelinfo.php');
     #include ('C:/xampp/htdocs/Blue/Code/costs.php');
-
-    #Import Mac
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/emission.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/display.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/travelinfo.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/costs.php');
+    #include ('C:/xampp/htdocs/Blue/Code/publicTransport.php');
 
     #____________________
     #Global variables
@@ -343,8 +282,12 @@
         $endAddress = $_GET['end'];
 
         #Coordinates
-        $startCoordinate = $_GET['startLng'] . ',' . $_GET['startLat'];
-        $endCoordinate = $_GET['endLng'] . ',' . $_GET['endLat'];
+        $startLat = $_GET['startLat'];
+        $startLng = $_GET['startLng'];
+        $endLat = $_GET['endLat'];
+        $endLng = $_GET['endLng'];
+        $startCoordinate = $startLng . ',' . $startLat;
+        $endCoordinate = $endLng . ',' . $endLat;
         
         #Distance
         $carDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'driving-car')[0];
@@ -372,17 +315,17 @@
         $electricBikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-electric')[1];
 
         #Change once västtrafik is implemented
-        $publicTranTime = 0;
+        $publicTranTime = getPublicTransport($startLat, $startLng, $endLat, $endLng);
 
         #Price
         $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
-        $totalTicketPrice = $ticketPrice; #($_GET['ticketPrice']);
+        $totalTicketPrice = $ticketPrice;
 
         #Calories
-        $walkCalories = 0; #($_GET['calories']);
-        $bikeCalories = 0; #($_GET['calories']);
+        $walkCalories = 0; 
+        $bikeCalories = 0;
 
     }
 
