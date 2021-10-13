@@ -5,6 +5,7 @@ With the help of this web application a commuter in Gothenburg can calculate the
 
 Link to website:
 https://blue.felixbrunnegard.se
+(Can also be run locally with XAMPP)
 
 
 ## Program - Structure
@@ -14,13 +15,25 @@ The code of the program is split between a main function, ‘index.php’, and s
 * travelinfo.php -> Contain function that provides travel info such as time and distance
 * display.php -> Contain functions that display output data
 
-The ‘test’ folder is for future potential tests if deemed necessary.
+### Extra
+* 'style.css' contain a majority of CSS code for style elements such as startup interface and table.
+
+* The ‘test’ folder is for future potential tests if deemed necessary.
 
 ## External resources:
 Scrum Board on Trello:
 https://trello.com/b/zNDrUmN4
 
 ## Developer documents (see DevDocuments folder)
+
+Who's who in Github:
+Felicia Berggren - dex2503
+Felix Brunnegård - felixbrunnegard
+Lisa Löving - lisaloving
+Max Norén - Max-Noren
+Joel Persson - jopers
+Johanna Schüldt - Yoschu
+Irja Vuorela - Snarkjakten
 
 Definition of done:
 https://github.com/Max-Noren/Blue/blob/main/DevDocuments/Definition%20of%20done.pdf

@@ -24,66 +24,9 @@
         <!-- jQuery Autocomplete -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
 
-        <style>
-            /*Text input style : Adjusting size */
-            input[type=text]{
-                border: round;
-                border-radius: 13px;
-                font-size: 150%;
-            }
-
-            /*Submit input style : Adjusting color, size*/
-            input[type=submit]{
-                background-color: #7FFF00;
-                border-radius: 15px;
-                font-weight: bold;
-                font-size: 125%;
-            }
-
-            /* Make inputs visible as interactive*/
-            input:hover{
-                background-color: #FFFF00 ;
-                box-shadow: 2px 2px;
-            }
-
-            /*Img style: Resizing capabilites */
-            img{
-                max-width: 200px;
-                height: auto;
-            }
-
-            /* Hidden explaination visible when hovering*/
-            explain {
-                position: absolute;
-                display : none;
-                font-size: 11px;
-            }
-            .question:hover + explain{
-                display : block;
-                background-color: #FFE4E1 ;
-                border-style: inset;
-            }
-
-            /* The style of the table */
-            table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            }
-
-            td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-            background-color: #dddddd;
-            }
-
-
-        </style>
     </head>
 
     
@@ -266,7 +209,7 @@
     $gasPrice = 17.59; 
     $dieselPrice = 19.17;
     $electricPrice = 1.650;
-    $ticketPrice = 0;
+    $ticketPrice = 34;
 
     #fuel consumption (liter/km)
     $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
@@ -320,7 +263,7 @@
 
             #Price
             , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice,
-            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice //?
+            $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice 
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -353,7 +296,7 @@
         $electricBikeTime = $bikeDistance;
         
         #Change once västtrafik is implemented
-        $publicTranDistance = 0;
+        $publicTranDistance = $carDistance; //using car distance right now (since västtrafiks API doesn't provide this)
             
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
@@ -377,9 +320,8 @@
         #Price
         $totalGasPrice = calculateCost($carDistance, $gasPrice, $gasConsumption);
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
-        #OBS: price/consumtion for electric not implemented yet!
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
-        $totalTicketPrice = 0;
+        $totalTicketPrice = $ticketPrice;
 
         #Calories
         $walkCalories = 0; 
@@ -409,7 +351,11 @@
             , $carTime, $walkTime, $bikeTime, $electricBikeTime,$publicTranTime
 
             #Price
+            , $gasPrice, $dieselPrice, $electricPrice
             , $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice
+
+            #fuel consumption (liter/km)
+            , $gasConsumption, $dieselConsumption, $electricConsumption
 
             #Calories
             , $walkCalories, $bikeCalories
@@ -424,7 +370,10 @@
             $TripGasCarEmission, $TripDieselCarEmission, $TripElectricCarEmission, 
             $TripBikeEmission, $TripElectricBikeEmission,$TripWalkEmission, $TripPublicTranEmission,
             $carDistance, $bikeDistance, $walkDistance, $publicTranDistance, 
-            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice);
+            $gasPrice, $dieselPrice, $electricPrice,
+            $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice,
+            $gasCarEmission, $dieselCarEmission, $electricCarEmission, $publicTranEmission,
+            $gasConsumption, $dieselConsumption, $electricConsumption);
 
     }
 
