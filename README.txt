@@ -5,6 +5,7 @@ With the help of this web application a commuter in Gothenburg can calculate the
 
 Link to website:
 https://blue.felixbrunnegard.se
+(Can also be run locally with XAMPP)
 
 
 ## Program - Structure
@@ -14,7 +15,10 @@ The code of the program is split between a main function, ‘index.php’, and s
 * travelinfo.php -> Contain function that provides travel info such as time and distance
 * display.php -> Contain functions that display output data
 
-The ‘test’ folder is for future potential tests if deemed necessary.
+### Extra
+* 'style.css' contain a majority of CSS code for style elements such as startup interface and table.
+
+* The ‘test’ folder is for future potential tests if deemed necessary.
 
 ## External resources:
 Scrum Board on Trello:
