@@ -1,0 +1,17 @@
+Reflections week 6
+We've decided to drop written tests completely due to them taking more time than the time it would save us hunting down bugs, since our functions are very simple.
+
+What do I want to learn or understand better?
+- I'd like to understand KPIs better, which ones to use, what to take away from them, efficient ways to keep track of them.
+
+How can I help someone else, or the entire team, to learn something new?
+- I get that I like written tests more than the average person, but maybe I could find out when it would be reasonable to make the switch from manual to runnable tests, in a project. 
+
+What is my contribution towards the team’s use of Scrum?
+- I participated in the velocity/sprint planning meeting.
+- I updated our scrum board with a new user story we discovered we needed, and a card for bugs we had found
+
+What is my contribution towards the team’s deliveries?
+- I was part of the coding team that changed our output strings into a table format.
+- I was part of the team that made functions to convert the output data into more reasonable formats (such as 1000g to 1kg)
+- I was part of the team that added mouseover titles/tooltips to the cells in the output table.

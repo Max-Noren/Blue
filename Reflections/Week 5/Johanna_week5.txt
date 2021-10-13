@@ -1,0 +1,24 @@
+Reflection - Week 5
+
+what do I want to learn or understand better?
+Since we are a small team working with a small project entirely defined by ourselves I believe
+we work a bit differently from a team working with a "real" project. Our team members are good at
+keeping the members in the group updated on the parts of the project they are working on, which 
+makes my role as Scrum Master easier. The main thing I do is to keep track of assignments in the
+Trello board.
+
+My goal for last week was to become better at defining goals and divide them into tasks, which I 
+though was a bit difficult. I still think it should be my goal, since I feel I still have room to
+improve.
+
+how can I help someone else, or the entire team, to learn something new?
+By sharing my knowledge and experience when needed and give help when someone need it.
+
+what is my contribution towards the team’s use of Scrum?
+Actively participating in meetings and decision making, as every week. I have kept track 
+of the user story assignments for each week and how many points we take on vs how many we
+finish.
+
+what is my contribution towards the team’s deliveries?
+I, together with Max, have this week worked with putting together the different parts of
+the code so that everything works together.
