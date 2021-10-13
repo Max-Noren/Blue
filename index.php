@@ -221,12 +221,7 @@
     #include ('C:/xampp/htdocs/Blue/Code/display.php');
     #include ('C:/xampp/htdocs/Blue/Code/travelinfo.php');
     #include ('C:/xampp/htdocs/Blue/Code/costs.php');
-
-    #Import Mac
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/emission.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/display.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/travelinfo.php');
-    #include('/Applications/XAMPP/xamppfiles/htdocs/Blue/Code/costs.php');
+    #include ('C:/xampp/htdocs/Blue/Code/publicTransport.php');
 
     #____________________
     #Global variables
