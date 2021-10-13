@@ -146,7 +146,7 @@
 
         #eastereggs
         $easterEgg1 = 'Bzz!'; //BEV
-        $easterEgg2 = 'wrooom'; //cars
+        $easterEgg2 = '*cough cough*'; //cars
         $easterEgg3 = 'Swooosh!!!'; //electric bike
         $easterEgg4 = 'Are we there yet?'; //walk
         $easterEgg5 = 'The bus leaves in a minute...'; //public transport
