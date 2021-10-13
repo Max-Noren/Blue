@@ -1,6 +1,11 @@
+<!------------------- 
+#
+# This file contain a function to calculate the time it takes for a trip by public transport
+#
+# The file is manualy tested
+#
+-------------------->
 <?php
-
-
 function getPublicTransport($originLat, $originLng, $destinationLat, $destinationLng){
 
     //Get token from Västtrafik API
