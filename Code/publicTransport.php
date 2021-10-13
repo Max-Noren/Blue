@@ -43,19 +43,19 @@ function getPublicTransport($originLat, $originLng, $destinationLat, $destinatio
     ),
     ));
 
-    $vastTraffikAPIresponse = curl_exec($curl);
+    $vastTrafikAPIResponse = curl_exec($curl);
 
     curl_close($curl);
 
     //Finds the highest index in array/index for end destination
     $maxIndex = 0;   
-    while(json_decode($vastTraffikAPIresponse)-> TripList -> Trip[0]->Leg[$maxIndex+1]->type != null){
+    while(json_decode($vastTrafikAPIResponse)-> TripList -> Trip[0]->Leg[$maxIndex+1]->type != null){
         $maxIndex++;
     };
 
     //Time calculation
-    $startTime = new DateTime(json_decode($vastTraffikAPIresponse)-> TripList -> Trip[0]->Leg[0]->Origin->time);
-    $endTime = new DateTime(json_decode($vastTraffikAPIresponse)-> TripList -> Trip[0]->Leg[$maxIndex]->Destination->time);
+    $startTime = new DateTime(json_decode($vastTrafikAPIResponse)-> TripList -> Trip[0]->Leg[0]->Origin->time);
+    $endTime = new DateTime(json_decode($vastTrafikAPIResponse)-> TripList -> Trip[0]->Leg[$maxIndex]->Destination->time);
     $interval = $endTime->diff($startTime);
 
     //Return time diffrence in minutes
