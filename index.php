@@ -113,7 +113,7 @@
                     <div style="display:inline-block;">
                         <label style="font-weight:bold;" for="start">From: </label>
                         <br>
-                        <input type="text" id="start" name="start" required>
+                        <input type="text" id="start" name="start" value="<?php if(isset($_GET['start'])){echo $_GET['start'];}?>" required>
                         
                     </div>
                     
@@ -121,7 +121,7 @@
                     <div style="display:inline-block;">
                         <label style="font-weight:bold;" for="end">To: </label>
                         <br>
-                        <input type="text" id="end" name="end" required>
+                        <input type="text" id="end" name="end" value="<?php if(isset($_GET['end'])){echo $_GET['end'];}?>" required>
                     </div>
                     
                     <br><br><br>
@@ -137,10 +137,10 @@
                              conscious choice! (Limited to Gothenburg Sweden) </explain>
 
                     <!-- Hidden input fields for saving data -->
-                    <input style="display: none;" id="startLat" name="startLat" >
-                    <input style="display: none;" id="startLng" name="startLng" >
-                    <input style="display: none;" id="endLat" name="endLat" >
-                    <input style="display: none;" id="endLng" name="endLng" >
+                    <input style="display: none;" id="startLat" name="startLat" value="<?php if(isset($_GET['startLat'])){echo $_GET['startLat'];} ?>" >
+                    <input style="display: none;" id="startLng" name="startLng" value="<?php if(isset($_GET['startLng'])){echo $_GET['startLng'];} ?>" >
+                    <input style="display: none;" id="endLat" name="endLat" value="<?php if(isset($_GET['endLat'])){echo $_GET['endLat'];} ?>" >
+                    <input style="display: none;" id="endLng" name="endLng" value="<?php if(isset($_GET['endLng'])){echo $_GET['endLng'];} ?>" >
                     <br>
                 </form> 
 
