@@ -27,7 +27,7 @@ input:hover{
 
 /*Img style: Resizing capabilites */
 img{
-    max-width: 200px;
+    width: 420px;
     height: auto;
 }
 
