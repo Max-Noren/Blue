@@ -35,6 +35,10 @@
     return array($distance, $time);
   }
 
+  #____________________
+  #Function that returns coordinates from search query
+  #____________________
+
   function getCoordinatesORSAutoComplete($placeName){
     $curl_ORS = curl_init();
 
