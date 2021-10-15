@@ -281,11 +281,17 @@
         $startAddress = $_GET['start'];
         $endAddress = $_GET['end'];
 
+        ## Get coordinates from search querry
+        $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress);
+        $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);
+
         #Coordinates
-        $startLat = $_GET['startLat'];
-        $startLng = $_GET['startLng'];
-        $endLat = $_GET['endLat'];
-        $endLng = $_GET['endLng'];
+        $startLat = $startCoordinatesArray[1];
+        $startLng = $startCoordinatesArray[0];
+        $endLat = $endCoordinatesArray[1];
+        $endLng = $endCoordinatesArray[0];
+
+        #Input for distance calc
         $startCoordinate = $startLng . ',' . $startLat;
         $endCoordinate = $endLng . ',' . $endLat;
         
