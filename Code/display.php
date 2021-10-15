@@ -244,6 +244,13 @@
                 echo "</tr>";
 
             echo "</table>";
+
+
+    }
+
+    function displayHoverInfo(){
+        echo "<text style='text-indent: 15%;font-style: italic;'>";
+        echo "<p>*Try hovering the mouse over the icons or outputs below to receive more information.</p>";
     }
 
 
