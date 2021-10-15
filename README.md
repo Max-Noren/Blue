@@ -54,7 +54,7 @@ Project scope:
 https://github.com/Max-Noren/Blue/blob/main/DevDocuments/Project%20Scope.pdf
 
 KPIs
-https://github.com/Max-Noren/Blue/blob/main/DevDocuments/KPI's%20blue%20team.pdf
+https://github.com/Max-Noren/Blue/tree/main/DevDocuments/KPIs
 
 Mockup:
 https://github.com/Max-Noren/Blue/blob/main/DevDocuments/Blue_Mockup_2.0.pdf
