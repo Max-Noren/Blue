@@ -59,7 +59,8 @@ https://github.com/Max-Noren/Blue/blob/main/DevDocuments/KPI's%20blue%20team.pdf
 Mockup:
 https://github.com/Max-Noren/Blue/blob/main/DevDocuments/Blue_Mockup_2.0.pdf
 
-## Individual and team reflections: Reflections can be found in the folder ‘Reflections’ and is organized in individual week folders. Team reflections are only present from week 3 and onward while individual reflections can be found in every week for all team members.
+## Individual and team reflections:
+Reflections can be found in the folder ‘Reflections’ and is organized in individual week folders. Team reflections are only present from week 3 and onward while individual reflections can be found in every week for all team members.
 
 https://github.com/Max-Noren/Blue/tree/main/Reflections
 
