@@ -365,8 +365,7 @@
             , $startCoordinate , $endCoordinate;
         }
         
-        #display info about hoverfunctions
-        displayHoverInfo();
+        
         
         #Displays all data in table
         displayTable($carTime, $bikeTime, $electricBikeTime, $walkTime, $publicTranTime,
@@ -378,7 +377,8 @@
             $gasCarEmission, $dieselCarEmission, $electricCarEmission, $publicTranEmission,
             $gasConsumption, $dieselConsumption, $electricConsumption);
 
-        
+        #display info about hoverfunctions
+        displayHoverInfo();  
 
     }
         
