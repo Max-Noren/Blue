@@ -47,7 +47,8 @@
     curl_setopt($curl_ORS, CURLOPT_HEADER, FALSE);
 
     curl_setopt($curl_ORS, CURLOPT_HTTPHEADER, array(
-      "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
+      "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+      "Content-Type: application/json; charset=utf-8"
     ));
 
     $orsApiAutoCompleteResponse = curl_exec($curl_ORS);
