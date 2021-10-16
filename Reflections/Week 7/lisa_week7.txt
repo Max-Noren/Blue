@@ -1,0 +1,24 @@
+This week we finalized the website. We fixed tiny issues, perfected some things, added some extra things etc. I used my effort points fully like planned so for me this was a good 
+week of effort estimations. The time and effort I comitted to on monday was exactly what I put in and did on my cards. So I'm happy about that. I had to down-adjust the points on
+one of my cards though since it took much less time than estimated.
+Since this was our last sprint I will take that into consideration while answering the questions below.
+
+In summation with the individual reflection questions:
+what do I want to learn or understand better?
+  - I would like to gain more experience with this way of working (agile). I liked it and I know I could become better by doing it more in the future. 
+  - I really do think this was a good course for us to learn how to work on projects in teams int he real world. We were quite a big group of 7 people so it was also learning 
+  the balance of making sure to state my own opinions but aölso listen to the others and to not be bossy or controlling, letting go of some things and trust other members of the 
+  team to handle it better than I ever could. Also working with new people and not only my usual group in school.
+how can I help someone else, or the entire team, to learn something new?
+ - Right now we have the report in front of us. So I guess while we work on it toghether, me and everyone else will bring our own experiences on how to best do this and write the
+ report together and help each other where needed. 
+what is my contribution towards the team’s use of Scrum?
+ - This was the same as last week.
+what is my contribution towards the team’s deliveries?
+ - This week I made sure to make one task at a time, I did them in time for our meetings and updated the code with the feedback I got from the group then. 
+ - For example I added value to the user by adding more useful info in the form of hover functions. Those tell the user, for example, how we calculated the cost or emissions of
+ the trip (gas prices used, emission rates etc...). 
+ - I made sure to be active on trello so the others could see what I was doing even when we did not code together or had any meetings. 
+ - I also try to be active with reviewing the other team members pull requests, since we have decided that everyone should review and accept a pull request before merging into 
+ main this allows the groups flow to be better. I have also pointed out the importance of this during a meeting this week, since all of our pull requests tends to be left 
+ until the end of the week since all group members don´t do this. But I also understand that it takes time and some might not have the time to look at a pull request immidietely. 
