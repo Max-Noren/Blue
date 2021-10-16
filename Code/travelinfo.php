@@ -40,9 +40,15 @@
   #____________________
 
   function getCoordinatesORSAutoComplete($placeName){
+    
     $addressArray = explode(",", $placeName);
-    $addressArray[1] = "Gothenburg";
-    $addressArray[3] = "Sweden";
+    
+    # Replace Göteborg and Sverige with Gothenburg and sweden 
+    if($addressArray[1] != null){
+      $addressArray[1] = "Gothenburg";
+      $addressArray[3] = "Sweden";
+    };
+    
     $placeName = implode(",", $addressArray);
   
     $curl_ORS = curl_init();
