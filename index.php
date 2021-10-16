@@ -285,6 +285,8 @@
         $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress);
         $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);
 
+        //echo "lat: ".$startCoordinatesArray[1]." Lng:".$startCoordinatesArray[0]." lat: ".$endCoordinatesArray[1]." Lng:".$endCoordinatesArray[0];
+
         #Coordinates
         $startLat = $startCoordinatesArray[1];
         $startLng = $startCoordinatesArray[0];
