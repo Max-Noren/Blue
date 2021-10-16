@@ -11,7 +11,7 @@
 #index.php -> Manually tested and compared against results
 #from openrouteservice.org
 -------------------->
-<html>
+<html lang="sv" >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -281,11 +281,23 @@
         $startAddress = $_GET['start'];
         $endAddress = $_GET['end'];
 
-        ## Get coordinates from search querry
-        $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress);
-        $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);
+        $startArray = explode(",", $startAddress);
+        $endArray = explode(",", $endAddress);
 
-        //echo "lat: ".$startCoordinatesArray[1]." Lng:".$startCoordinatesArray[0]." lat: ".$endCoordinatesArray[1]." Lng:".$endCoordinatesArray[0];
+        $startArray[1] = "Gothenburg";
+        $endArray[1] = "Gothenburg";
+        $startArray[3] = "Sweden";
+        $endArray[3] = "Sweden";
+
+        $startAddress = implode(",", $startArray);
+        $endAddress = implode(",", $endArray);
+
+        ## Get coordinates from search querry
+        $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress); //("Chalmerska Huset, Gothenburg, VG, Sweden");
+        $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);  //("Vagnhallen Majorna, Gothenburg, VG, Sweden");
+
+        echo $startAddress, "<br>", $endAddress, "<br>";
+        echo "lat: ".$startCoordinatesArray[1]." Lng:".$startCoordinatesArray[0]." lat: ".$endCoordinatesArray[1]." Lng:".$endCoordinatesArray[0];
 
         #Coordinates
         $startLat = $startCoordinatesArray[1];

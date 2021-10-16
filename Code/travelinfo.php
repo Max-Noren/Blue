@@ -40,6 +40,11 @@
   #____________________
 
   function getCoordinatesORSAutoComplete($placeName){
+    $addressArray = explode(",", $placeName);
+    $addressArray[1] = "Gothenburg";
+    $addressArray[3] = "Sweden";
+    $placeName = implode(",", $addressArray);
+  
     $curl_ORS = curl_init();
 
     curl_setopt($curl_ORS, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248e38d3f64310c46ceb044c9b37ef563cd&text=".urlencode($placeName)."&boundary.country=SE&sources=openstreetmap&layers=neighbourhood,address,venue&boundary.circle.lon=11.97307942&boundary.circle.lat=57.70914870&boundary.circle.radius=11");
