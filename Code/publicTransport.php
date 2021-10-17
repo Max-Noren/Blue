@@ -1,8 +1,6 @@
 <!------------------- 
 #
-# This file contain a function to calculate the time it takes for a trip by public transport
-#
-# The file is manualy tested
+# This file contains a function to calculate the time it takes for a trip by public transport
 #
 -------------------->
 <?php
@@ -58,7 +56,7 @@ function getPublicTransport($originLat, $originLng, $destinationLat, $destinatio
     $endTime = new DateTime(json_decode($vastTrafikAPIResponse)-> TripList -> Trip[0]->Leg[$maxIndex]->Destination->time);
     $interval = $endTime->diff($startTime);
 
-    //Return time diffrence in minutes
+    //Returns time difference in minutes
     return $interval->format("%H")*60 + $interval->format("%i");
 
 }

@@ -1,10 +1,7 @@
 <!------------------- 
 #
-#This file contain all print functions for outputting
+#This file contains all print functions for outputing
 #and displaying data
-#
-#display.php -> Manually tested and compared against results
-#from openrouteservice.org
 #
 -------------------->
 
@@ -22,12 +19,12 @@
     #or tumble drying sessions for the trip, chosen randomly.
     #
     #The function takes in CO2 for the trip given every transportation mode and then prints
-    #out nr of sandwiches/plasticbags/tumble dryer sessions that the trip equivalates to.
+    #out nr of sandwiches/plasticbags/tumble drying sessions that the trip equivalates to.
     #____________________
     function calculateHouseHoldItems($gas, $diesel, $electric, $bike, $electricBike, $walk, $publicTran)
     {
-        //how many grams of CO2 is (approx) the emissions from either a cheese sandwich, 
-        //plasticbag and dryer(which one of them is chosen randomly).
+        //How many grams of CO2 is (approx) the emissions from either a cheese sandwich, 
+        //plastic bag and dryer(which one of them is chosen randomly).
 
         $cheeseSandwich = 345;
         $plasticbag = 33;
@@ -58,7 +55,7 @@
         $walkHouseHoldItems = number_format($walk / $RandomMeasure, 1);
         $publicTranHouseHoldItems = number_format($publicTran / $RandomMeasure, 1);
 
-        //return the type of household item and the equivalent numbers of household items
+        //Return the type of household item and the equivalent amount of the household item
         return array($houseHoldItem, $gasHouseHoldItems, $dieselHouseHoldItems, $electricHouseHoldItems, 
         $bikeHouseHoldItems, $electricBikeHouseHoldItems, $walkHouseHoldItems, $publicTranHouseHoldItems);
     }
@@ -75,7 +72,7 @@
         return sprintf($format, $hours, $minutes);
     }
 
-    #Converts grams into kilograms and kilograms into tonnes
+    #Converts grams into kilograms and converts kilograms into tonnes
     function convertToTonnesKilos($grams) {
         $kilos = floor($grams / 1000);
         $tonnes = floor($grams / 1000000);
@@ -110,27 +107,27 @@
         $toolTipElectric = 'BEV stands for Battery Electric Vehicle. They have no tailpipe emissions and do not contribute to pollution in our cities. Their emissions come from producing the electricity they consume. Please share your commute!';
         $toolTipWalk = 'Good for the environment and good for your health! It might just take some time depending on your commute.';
         $toolTipBike = 'The same benefits as walking but faster!';
-        $toolTipElectricBike = 'More efficent than taking the car but less beneficial than a normal bike in terms of health and enviornment. (Allows you to decide how sweaty you are for the next meeting! ;) )';
-        $toolTipTran = 'Sharing is caring! Your carbon emission may vary depending on your choice of public transportation. The CO2e values in this column represents an avarage between diesel buses and trams. A good alternative if you do not have the option to walk or bike.';
+        $toolTipElectricBike = 'More efficent than taking the car but less beneficial than a normal bike in terms of health and environment. (Allows you to decide how sweaty you are for the next meeting! ;) )';
+        $toolTipTran = 'Sharing is caring! Your carbon emission may vary depending on your choice of public transportation. The CO2e values in this column represents an average between diesel buses and trams. A good alternative if you do not have the option to walk or bike.';
         $toolTipCO2e = 'CO2e stands for Carbon Dioxide Equivalence and is a measure of carbon dioxide resulting from in this case your travel. Lower is better.';
         $toolTipTime ='The duration of your trip in hours and minutes.';
-        $toolTipDistance = 'The distance in kilometers for your trip, remember that different travel option may have different available routes.';
-        $toolTipHouseHoldItem = 'Your trip’s emissions converted to the same emission caused by this many';
+        $toolTipDistance = 'The distance in kilometers for your trip. Remember that different travel option may have different available routes.';
+        $toolTipHouseHoldItem = 'Your trips emissions converted to the same emission caused by this many';
         $toolTipCost = 'The price for your trip in Swedish Kronor (SEK). The cost is only for the fuel consumed or a Västtrafik ticket within Gothenburg.';
 
         #icon tooltips
-        $toolTipCarIcon = 'Half of all trips made by car in Swedish cities (like Gothenburg) are shorter than 5 km, according to Trafikverket. This is unfortunate since there are so many more energyefficient and environmental friendly options, such as public transportation, biking or walking. To take the bike or to walk is also good for your health!';
+        $toolTipCarIcon = 'Half of all trips made by car in Swedish cities (like Gothenburg) are shorter than 5 km, according to Trafikverket. This is unfortunate since there are so many more energy efficient and environmentaly friendly options, such as public transportation, biking or walking. To take the bike or to walk is also good for your health!';
         $toolTipWalkIcon = 'I was walking home late one night when I saw dozens of giant cupcakes and pies everywhere. It was kind of scary… The streets were oddly desserted.';
         $toolTipBikeIcon = 'Riding a bike is a fast way to get to your destination and has close to zero negative impact on the environment! It is also very good for your health. Just don´t forget your helmet!';
         $toolTipPublicTransportIcon = 'Public transport in Gothenburg consists of buses, trams, and ferries. There are various types of tickets depending on how often you travel, how old you are or if you´re a student. With the same ticket, you can take the bus, the tram or the ferry.';
 
         #Tooltips for CO2 calculations
         $co2InfoCars1 = 'This is calculated using an average emission value for'; //part 1 of general car co2 emissions statement
-        $co2InfoCars2 = 'g Co2/km, multiplied with the lenght of your trip in km'; //part 2 of general car co2 emissions statement
+        $co2InfoCars2 = 'g Co2/km, multiplied with the length of your trip in km'; //part 2 of general car co2 emissions statement
         $co2InfoZeroEmission = 'Close enough to zero to be ignored';
-        $co2InfoElectricBike = 'Electric bikes consumes small ammounts of electricity and therefor the Co2 emissions per km is very low. While biking within Gothenburg the emissions are close to zero. :)';
+        $co2InfoElectricBike = 'Electric bikes consumes small ammounts of electricity and therefore the Co2 emissions per km is very low. While biking within Gothenburg the emissions are close to zero. :)';
         $co2InfoPublicTransport1 = 'This is calculated using an average value of Co2 emissions for busses and trams, which is'; //part 1
-        $co2InfoPublicTransport2 = 'g Co2/km. The end result is based on that value, the lenght of the trip and is calculated for one passenger.'; //part 2
+        $co2InfoPublicTransport2 = 'g Co2/km. The end result is based on that value, the length of the trip and is calculated for one passenger.'; //part 2
 
         #Tooltips for cost
         $costInfoCars1 = 'The cost is only for the fuel consumed during your trip. Fuel consumption is at average '; //part 1
@@ -139,12 +136,12 @@
         $costInfoElectricCar2 = 'kwh/km in 2021) and the current price of electricity within Gothenburg 2021 which is'; //part 2
         $costInfoFree = 'This is free!';
         $costInfoElectricBike = 'This is (almost) free. If you use an electric bike everyday for your commute it will add up to a small cost for the electricity used.';
-        $costInfoPublicTransport = 'This is the cost of a Zon A Västtrafik ticket in 2021, valid 90 minutes within Gothenburg for an adult. For commuters, this can be made cheaper by buying a Period ticket instead. A 30 day Zon A ticket would cost ~18,9 SEK/trip, a 90 day Zon A ticket would cost ~17 SEK/trip and a 365 day Zon A ticket would only cost ~15,6 SEK/trip! (calculated with the assumption of making a returntrip later the same day and using an average of 21 workdays/month or 255 workdays/year)';
+        $costInfoPublicTransport = 'This is the cost of a Zon A Västtrafik ticket in 2021, valid 90 minutes within Gothenburg for an adult. For commuters, this can be made cheaper by buying a period ticket instead. A 30 day Zon A ticket would cost ~18,9 SEK/trip, a 90 day Zon A ticket would cost ~17 SEK/trip and a 365 day Zon A ticket would only cost ~15,6 SEK/trip! (calculated with the assumption of making a return trip later the same day and using an average of 21 workdays/month or 255 workdays/year)';
 
-        #tooltip for public transportation distance
+        #Tooltip for public transportation distance
         $toolTipPublicTransportDist = 'Disclaimer: This is calculated using the shortest route for a car only and will probably not be a completely accurate representation of the distance for the route using public transportation.';
 
-        #eastereggs
+        #Easter eggs
         $easterEgg1 = 'Bzz!'; //BEV
         $easterEgg2 = '*cough cough*'; //cars
         $easterEgg3 = 'Swooosh!!!'; //electric bike

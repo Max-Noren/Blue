@@ -1,16 +1,14 @@
 <!------------------- 
 #
-#This file contain cost related functions
-#
-#calculateCost -> Manually tested
+#This file contains cost related functions
 #
 -------------------->
 
 <?php
 
 #_________________
-# This function calculates the cost for the trip for each mode of transport (gascar, dieselcar and BEV).
-# The functions inputs are distance for the trip (km), prise for the fuel type (kr/liter) and the fuel consumtion(liter/km).
+#This function calculates the cost of the trip for each mode of transport (gascar, dieselcar and BEV).
+#The functions inputs are distance for the trip (km), price for the fuel type (kr/liter) and the fuel consumtion(liter/km).
 #_______________
 function calculateCost($km, $fuelPrice, $consumption){
     
