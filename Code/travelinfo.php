@@ -46,6 +46,7 @@
     # Replace Göteborg and Sverige with Gothenburg and sweden 
     if($addressArray[1] != null){
       $addressArray[1] = "Gothenburg";
+      $addressArray[2] = "VG";
       $addressArray[3] = "Sweden";
     };
     
