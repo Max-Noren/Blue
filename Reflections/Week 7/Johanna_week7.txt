@@ -1,0 +1,23 @@
+Reflection - Week 7
+
+what do I want to learn or understand better?
+I think we have become better at estimating what a reasonable amount of points for a
+task is in relation to other assignments, though we seem to have some trouble 
+estimating, in the beginning of the week, how much we will be able to complete during
+the week. This means we have to decide new assignments in the middle of the week, which
+has worked so far, but could cause problems.
+
+how can I help someone else, or the entire team, to learn something new?
+By sharing my knowledge and experience when needed and give help when someone needs it.
+This week I shared how to create a graph from a table in Excel.
+
+what is my contribution towards the team’s use of Scrum?
+Actively participating in meetings and decision making, as every week. I and Irja put
+together information about each sprint and created graphs for our KPI.
+
+what is my contribution towards the team’s deliveries?
+We, Felix, Felicia and I, finished the assignment with getting the time public transport will take 
+from one coordinate to another from Västtrafik and incorperating the function we created into the rest
+of the program.
+
+Lisa and I added tooltips to some of the information in the table.
