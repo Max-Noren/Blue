@@ -1,15 +1,10 @@
 <!------------------- 
 #
-#This file contain the main code of the program including
+#This file contains the main code of the program including
 #user interface inputs as well as integrating all related
-#function files to provide a cohesive report of a trip's
+#function files to provide a cohesive report of a trips
 #carbon emission and other useful data for the trip.
 #
-#openrouteservice.php -> has been manually tested and 
-#compared to results from Google Maps (Coordinates). 
-#
-#index.php -> Manually tested and compared against results
-#from openrouteservice.org
 -------------------->
 <html>
     <head>
@@ -44,7 +39,7 @@
             })
 
             $( "#start" ).autocomplete({
-            source: allAddresses //The array from line 81
+            source: allAddresses 
             });  
             
         } );
@@ -57,7 +52,7 @@
             })
             
             $( "#end" ).autocomplete({
-            source: allAddresses //The array from line 81
+            source: allAddresses 
             });
             
         } );
@@ -74,11 +69,6 @@
 
             request.onreadystatechange = function () {
                 if (this.readyState === 4) {
-                //console.log('Status:', this.status);
-                //console.log('Headers:', this.getAllResponseHeaders());
-                //console.log('Body:', this.responseText);
-
-
                 var response = JSON.parse(this.responseText);
                 while (allAddresses.length) { allAddresses.pop(); } // Empty array
                 response.features.map(feature => feature.properties.label).forEach(label => allAddresses.push(label));  // Filter our label from response and push to allAddresses
@@ -211,14 +201,10 @@
     $electricPrice = 1.650;
     $ticketPrice = 34;
 
-    #fuel consumption (liter/km)
-    $gasConsumption = 0.056; //this is for new cars of 2020, according to the car manufacturers themself (source: trafikverket)
+    #Fuel consumption (liter/km)
+    $gasConsumption = 0.056; //This is for new cars of 2020, according to the car manufacturers themself (source: Trafikverket)
     $dieselConsumption = 0.051;
     $electricConsumption = 0.2; // kwh/km
-
-    #Calories (sugar cubes)
-    $walkCalories = 0;
-    $bikeCalories = 0;
 
     #Addresses 
     $startAddress = '';
@@ -233,7 +219,7 @@
     #____________________
     if(isset($_GET['calculate']))
     {
-        #Process and save inputs
+        #Process and save input
         processInput();
 
         #Process data and display output
@@ -265,10 +251,7 @@
             , $gasPrice, $dieselPrice, $electricPrice, $ticketPrice,
             $totalGasPrice , $totalDieselPrice , $totalElectricPrice , $totalTicketPrice 
 
-            #Calories
-            , $walkCalories, $bikeCalories
-
-            #fuel consumption (liter/km)
+            #Fuel consumption (liter/km)
             , $gasConsumption ,$dieselConsumption , $electricConsumption
 
             #Addresses
@@ -301,8 +284,9 @@
         $bikeDistance = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[0];
         $electricBikeTime = $bikeDistance;
         
-        #Change once västtrafik is implemented
-        $publicTranDistance = $carDistance; //using car distance right now (since västtrafiks API doesn't provide this)
+        #The public transportation distance uses car distance 
+        #since Västtrafiks API doesn't provide this
+        $publicTranDistance = $carDistance; 
             
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
@@ -319,8 +303,6 @@
         $walkTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'foot-walking')[1];
         $bikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-regular')[1];
         $electricBikeTime = getDistanceAndTime($startCoordinate, $endCoordinate, 'cycling-electric')[1];
-
-        #Change once västtrafik is implemented
         $publicTranTime = getPublicTransport($startLat, $startLng, $endLat, $endLng);
 
         #Price
@@ -328,11 +310,6 @@
         $totalDieselPrice = calculateCost($carDistance, $dieselPrice, $dieselConsumption);
         $totalElectricPrice = calculateCost($carDistance, $electricPrice, $electricConsumption); 
         $totalTicketPrice = $ticketPrice;
-
-        #Calories
-        $walkCalories = 0; 
-        $bikeCalories = 0;
-
     }
 
     #____________________
@@ -360,11 +337,8 @@
             , $gasPrice, $dieselPrice, $electricPrice
             , $totalGasPrice, $totalDieselPrice, $totalElectricPrice, $totalTicketPrice
 
-            #fuel consumption (liter/km)
+            #Fuel consumption(liter/km)
             , $gasConsumption, $dieselConsumption, $electricConsumption
-
-            #Calories
-            , $walkCalories, $bikeCalories
 
             #Addresses
             , $startAddress, $endAddress
@@ -383,7 +357,7 @@
             $gasCarEmission, $dieselCarEmission, $electricCarEmission, $publicTranEmission,
             $gasConsumption, $dieselConsumption, $electricConsumption);
 
-        #display info about hoverfunctions
+        #Displays info about hover functions
         displayHoverInfo();  
 
     }

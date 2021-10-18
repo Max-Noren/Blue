@@ -1,9 +1,17 @@
+<!-- 
+#
+#This file contains functions related to obtaining trip info such as
+#getting trip distance, trip time and coordinates for start and end addresses.
+#
+-->
+
+
 <?php
   #____________________
-  #Function that calculates and returnes the distance and time given coordinates for a start and end position and transportation mode.
+  #Function that calculates and returns the distance and time given coordinates for a start and end position and transportation mode.
   #Coordinates must be input like this: '11.966954,57.706818' (the format for the coordinates are: long,lat) 
   #Different modes of transportations are: 'foot-walking', 'driving-car', 'wheelchair','cyckling-road', 'cykling-regular' or 'cykling-electric'.
-  #Returns result in an array, first array element[0] is distance in km, the second array element[1] is time in minutes for the route.  
+  #Returns result in an array. First array element[0] is distance in km, the second array element[1] is time in minutes for the route.  
   #____________________
   function getDistanceAndTime($coordinatesFrom, $coordinatesTo, $transportationMode){
 
