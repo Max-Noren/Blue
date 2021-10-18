@@ -35,4 +35,42 @@
     return array($distance, $time);
   }
 
+  #____________________
+  #Function that returns coordinates from search query
+  #____________________
+
+  function getCoordinatesORSAutoComplete($placeName){
+    
+    $addressArray = explode(",", $placeName);
+    
+    # Replace Göteborg and Sverige with Gothenburg and sweden 
+    if($addressArray[1] != null){
+      $addressArray[1] = "Gothenburg";
+      $addressArray[2] = "VG";
+      $addressArray[3] = "Sweden";
+    };
+    
+    $placeName = implode(",", $addressArray);
+  
+    $curl_ORS = curl_init();
+
+    curl_setopt($curl_ORS, CURLOPT_URL, "https://api.openrouteservice.org/geocode/autocomplete?api_key=5b3ce3597851110001cf6248e38d3f64310c46ceb044c9b37ef563cd&text=".urlencode($placeName)."&boundary.country=SE&sources=openstreetmap&layers=neighbourhood,address,venue&boundary.circle.lon=11.97307942&boundary.circle.lat=57.70914870&boundary.circle.radius=11");
+    curl_setopt($curl_ORS, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($curl_ORS, CURLOPT_HEADER, FALSE);
+
+    curl_setopt($curl_ORS, CURLOPT_HTTPHEADER, array(
+      "Accept: application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+      "Content-Type: application/json; charset=utf-8"
+    ));
+
+    $orsApiAutoCompleteResponse = curl_exec($curl_ORS);
+    curl_close($curl_ORS);
+    $lng = json_decode($orsApiAutoCompleteResponse) -> features[0] -> geometry -> coordinates[0];
+    $lat = json_decode($orsApiAutoCompleteResponse) -> features[0] -> geometry -> coordinates[1];
+    return array(
+      $lng,
+      $lat
+    );
+  }
+
 ?>
