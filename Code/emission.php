@@ -2,8 +2,6 @@
 #
 #This file contain emission related functions
 #
-#calculateEmission -> Automated tests performed
-#
 -------------------->
 
 <?php 

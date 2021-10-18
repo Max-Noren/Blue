@@ -5,11 +5,6 @@
 #function files to provide a cohesive report of a trips
 #carbon emission and other useful data for the trip.
 #
-#openrouteservice.php -> Manually tested and 
-#compared to results from Google Maps (Coordinates). 
-#
-#index.php -> Manually tested and compared against results
-#from openrouteservice.org
 -------------------->
 <html>
     <head>

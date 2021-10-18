@@ -1,6 +1,6 @@
 <!------------------- 
 #
-#This file contains all print functions for outputing
+#This file contains all print functions for outputting
 #and displaying data
 #
 -------------------->
@@ -24,7 +24,7 @@
     function calculateHouseHoldItems($gas, $diesel, $electric, $bike, $electricBike, $walk, $publicTran)
     {
         //How many grams of CO2 is (approx) the emissions from either a cheese sandwich, 
-        //plastic bag and dryer(which one of them is chosen randomly).
+        //a plastic bag and a drying session(chosen randomly).
 
         $cheeseSandwich = 345;
         $plasticbag = 33;
