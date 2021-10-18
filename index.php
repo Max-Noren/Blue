@@ -265,8 +265,8 @@
         $endAddress = $_GET['end'];
 
         ## Get coordinates from search querry
-        $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress); //("Chalmerska Huset, Gothenburg, VG, Sweden");
-        $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);  //("Vagnhallen Majorna, Gothenburg, VG, Sweden");
+        $startCoordinatesArray = getCoordinatesORSAutoComplete($startAddress);
+        $endCoordinatesArray = getCoordinatesORSAutoComplete($endAddress);
 
         #Coordinates
         $startLat = $startCoordinatesArray[1];

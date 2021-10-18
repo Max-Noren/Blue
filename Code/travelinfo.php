@@ -35,8 +35,8 @@
 
     $data = json_decode($response);
 
-    $dist = $data->routes[0]->summary->distance; //this is the distance
-    $duration = $data->routes[0]->summary->duration; //this is the time in seconds
+    $dist = $data->routes[0]->summary->distance; //This is the distance
+    $duration = $data->routes[0]->summary->duration; //This is the time in seconds
 
     $time = round($duration/60);
     $distance = number_format($dist/1000, 1, '.', ',');
@@ -51,7 +51,7 @@
     
     $addressArray = explode(",", $placeName);
     
-    # Replace Göteborg and Sverige with Gothenburg and sweden 
+    #Replaces Göteborg and Sverige with Gothenburg and sweden 
     if($addressArray[1] != null){
       $addressArray[1] = "Gothenburg";
       $addressArray[2] = "VG";
