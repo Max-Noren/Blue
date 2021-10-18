@@ -1,3 +1,11 @@
+<!-- 
+#
+#This file contains functions related to obtaining trip info such as
+#getting trip distance, trip time and coordinates for start and end addresses.
+#
+-->
+
+
 <?php
   #____________________
   #Function that calculates and returns the distance and time given coordinates for a start and end position and transportation mode.

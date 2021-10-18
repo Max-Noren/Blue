@@ -1,3 +1,9 @@
+<!-- 
+#
+#This file contains automated functions test
+#
+-->
+
 <?php
 
 //Replace with your local path for index.php
