@@ -1,0 +1,20 @@
+Reflections week 7
+
+What do I want to learn or understand better?
+- I'd like to learn what it's like to work in an even bigger team. How to keep things from becoming chaotic.
+
+How can I help someone else, or the entire team, to learn something new?
+- Now that the project is in its end stages, it would be nice to look back at the tools we've used, and 
+their shortcomings. For example, my biggest gripe with the trello board is that there isn't a good way of 
+linking subtasks/user stories to parent tasks/epics (that would update automatically), meaning we don't 
+really get an overview of those relations. 
+
+What is my contribution towards the team’s use of Scrum?
+- I participated in the velocity/sprint planning meeting.
+- I shared my notes on the TA feedback, to reflect on after the meeting.
+
+What is my contribution towards the team’s deliveries?
+- I took part in writing the readme file and the project wiki on github.
+- I first worked alone in gathering the relevant data from our trello activity needed for one of our KPIs, 
+and was later joined by Johanna. We then made graphs for all the KPIs and kept track of the data for the 
+current week as well.
