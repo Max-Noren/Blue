@@ -291,7 +291,7 @@
         #Trip Emissions
         $TripGasCarEmission = calculateEmission($gasCarEmission, $carDistance);
         $TripDieselCarEmission = calculateEmission($dieselCarEmission, $carDistance);
-        $TripElectricCarEmission =calculateEmission($electricCarEmission, $carDistance);
+        $TripElectricCarEmission = calculateEmission($electricCarEmission, $carDistance);
         
         $TripWalkEmission = calculateEmission($walkEmission, $walkDistance);
         $TripBikeEmission = calculateEmission($bikeEmission, $bikeDistance);

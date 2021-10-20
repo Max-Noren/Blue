@@ -183,7 +183,7 @@
                 echo "<th title='$toolTipCO2e' style='text-align:right;'>CO2e</th>";
                 echo "<td title='$co2InfoCars1 gas cars, $gasCarEmission $co2InfoCars2'>" . convertToTonnesKilos($gas) . "</td>"; //gas
                 echo "<td title='$co2InfoCars1 diesel cars, $dieselCarEmission $co2InfoCars2'>" . convertToTonnesKilos($diesel) . "</td>"; //diesel
-                echo "<td title='$co2InfoCars1 electric cars (BEVs), $electricCarEmission $co2InfoCars2'>" . convertToTonnesKilos($gas) . "</td>"; //BEV
+                echo "<td title='$co2InfoCars1 electric cars (BEVs), $electricCarEmission $co2InfoCars2'>" . convertToTonnesKilos($electric) . "</td>"; //BEV
                 echo "<td title='$co2InfoZeroEmission'>" . convertToTonnesKilos($walk) . "</td>"; //walk
                 echo "<td title='$co2InfoZeroEmission'>" . convertToTonnesKilos($bike) . "</td>"; //bike
                 echo "<td title='$co2InfoElectricBike'>" . convertToTonnesKilos($electricBike) . "</td>"; //electric bike
