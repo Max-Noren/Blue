@@ -64,7 +64,8 @@ Reflections can be found in the folder ‘Reflections’ and is organized in ind
 
 https://github.com/Max-Noren/Blue/tree/main/Reflections
 
-## Sources: See the Github wiki for our sources.
+## Sources: 
+See the Github wiki for our sources.
 https://github.com/Max-Noren/Blue/wiki/Sources
 
 
